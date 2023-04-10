@@ -1,0 +1,9 @@
+name: hd2-website-dev
+version: '0.1'
+
+services:
+  app:
+    image: hd2-website-dev
+    build: .
+    ports:
+      - 3000:3000 
