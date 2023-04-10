@@ -27,9 +27,14 @@
 		"react-refresh": "0.14.0"
 	},
 	"bun-create": {
-		"postinstall": ["bun bun --use next"],
+		"postinstall": [
+			"bun bun --use next"
+		],
 		"start": "bun dev"
 	},
 	"module": "index.ts",
-	"type": "module"
+	"type": "module",
+	"volta": {
+		"node": "18.15.0"
+	}
 }
