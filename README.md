@@ -10,10 +10,25 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+### Setting up a local dev environment on Windows/WSL, macOS, and Linux
 
 ```bash
+curl https://get.volta.sh | bash
+volta install node@18
+volta install npm@latest
+curl -fsSL https://bun.sh/install | bash
+git clone -b development https://github.com/Google-Developer-Student-Club-Dearborn/hd2-website
+cd hd2-website
+bun install
 bun run dev
+```
+### Setting up a Docker dev environment
+
+* Install [Docker Deskop](https://www.docker.com/products/docker-desktop/) and run Docker.
+* Navigate to project directory.
+* Run the following command
+```bash
+docker compose up --build --force-recreate
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
