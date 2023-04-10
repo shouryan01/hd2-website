@@ -7,3 +7,7 @@ services:
     build: .
     ports:
       - 3000:3000 
+    volumes:
+      - ./pages:/home/bun/app/pages
+      - ./public:/home/bun/app/public
+      - ./styles:/home/bun/app/styles
