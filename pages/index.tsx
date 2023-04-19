@@ -1,34 +1,35 @@
+import React from "react";
 import Image from "next/image";
-//import { Inter } from "next/font/google";
+import disrupt from "../public/disrupt.svg";
 
-//const inter = Inter({ subsets: ["latin"] });
+function NavBar({ pages }) {
+  return (
+    <nav>
+      <ul className="nav-list">
+        {pages.map((page, index) => (
+          <li key={index} className="nav-item">
+            <a href="#" className="nav-link" data-text={page}>
+              {page}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
 
 export default function Home() {
-	return (
-              <>
-					<main className="flex min-h-screen flex-col items-center justify-between p-24">
-						<div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-							<Image
-								className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-								src="/image(2).png"
-								alt="Next.js Logo"
-								width={400}
-								height={400}
-								priority
-							/>
-						</div>
-						<div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-							<Image
-								className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-								src="/image(3).png"
-								alt="Next.js Logo"
-								width={400}
-								height={400}
-								priority
-							/>
-						</div>
-						Register, About, Sponsors, Prizes, FAQ, Contact
-					</main>
-              </>
-	);
+  const pages = ["register", "about", "sponsors", "prizes", "faq", "contact"];
+
+  return (
+    <>
+      <main className="flex min-h-screen flex-col items-center p-24">
+        <h1 className="d4">hack dearborn 2</h1>
+        <div className="relative">
+          <Image src={disrupt} alt="Disrupt Reality" />
+        </div>
+        <NavBar pages={pages} />
+      </main>
+    </>
+  );
 }
