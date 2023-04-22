@@ -46,12 +46,35 @@ body {
 .d4 {
   margin: 0.5em 0;
   font-family: "cyberpunk", sans-serif;
-  font-size: 8em;
+  font-size: 6em;
   color: #fff;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.05m;
+  letter-spacing: 0.05em;
   text-shadow: -0.09em 0 0 #f22613, 0.09em 0 0 #00ffff;
+}
+.d5 {
+  margin: 0.5em 0;
+  font-family: "Rubik Glitch", sans-serif;
+  font-size: 2em;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  text-shadow: -0.09em 0 0 #f22613, 0.09em 0 0 #00ffff;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.navbar {
+  align-self: center;
+  padding-bottom: 16px;
 }
 
 .nav-list {
