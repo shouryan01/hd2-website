@@ -1,7 +1,13 @@
 # hd2-website
+
 ground zero for Hack Dearborn 2
 
+## changelog
+
+![image](public/demo.gif "Demo") 
+
 ## design
+
 [View on Figma](https://www.figma.com/files/team/1160250767231758946)
 
 ## system design
@@ -22,11 +28,13 @@ cd hd2-website
 bun install
 bun run dev
 ```
+
 ### Setting up a Docker dev environment
 
 * Install [Docker Deskop](https://www.docker.com/products/docker-desktop/) and run Docker.
 * Navigate to project directory.
 * Run the following command
+
 ```bash
 docker compose up --build --force-recreate
 ```
