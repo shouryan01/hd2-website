@@ -84,7 +84,16 @@ body {
   height: 100%;
   opacity: 0.3;
 }
-
+.laptop-container {
+  position: relative;
+  display: inline-block;
+}
+.laptop-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* This will make the wrapper take up the full height of the viewport */
+}
 
 
 .main-container {

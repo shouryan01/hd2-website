@@ -1,6 +1,8 @@
 import React, {useEffect, useRef, useState} from "react";
 import { Events } from "react-scroll";
 import dynamic from "next/dynamic";
+import Image from "next/image";
+import laptopSvg from "../public/laptop.svg";
 
 const Rain = dynamic(() => import("../components/Rain"), { ssr: false });
 
@@ -32,7 +34,7 @@ export default function Home() {
 		const handleScroll = () => {
 			if (backgroundRef.current) {
 			  const scrollPosition = window.scrollY;
-			  const newScale = Math.max(0.25, 1 - scrollPosition / 1000);
+			  const newScale = Math.max(0.1, 1 - scrollPosition / 1000);
 			  setBgImageScale(newScale);
 			  
 			  // Update rainZIndex based on scroll position
@@ -80,11 +82,16 @@ export default function Home() {
 			<main className="flex min-h-screen flex-col items-center p-24 main-container">
 				<h1 className="d3">hack dearborn 2</h1>
 				<div className="relative">
-					<h3 className="d4">Disrupt Reality</h3>
-					<h5 className="d5">10.22.2023</h5>
+				<h3 className="d4">Disrupt Reality</h3>
+				<h5 className="d5">10.22.2023</h5>
 				</div>
 				<NavBar pages={pages} />
 				<div className="extra-content" style={{ minHeight: "200vh" }}>
+				</div>
+				<div className="laptop-wrapper">
+				<div className="laptop-container">
+					<Image src={laptopSvg} alt="Laptop" />
+				</div>
 				</div>
 			</main>
 		</>
