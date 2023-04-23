@@ -1,6 +1,9 @@
-import React from "react";
-import Image from "next/image";
-import disrupt from "../public/disrupt.svg";
+import React, {useEffect, useRef, useState} from "react";
+import { Events } from "react-scroll";
+import dynamic from "next/dynamic";
+
+const Rain = dynamic(() => import("../components/Rain"), { ssr: false });
+
 
 function NavBar({ pages }: { pages: string[] }) {
 	return (
@@ -19,10 +22,61 @@ function NavBar({ pages }: { pages: string[] }) {
 }
 
 export default function Home() {
+	const [bgImageScale, setBgImageScale] = useState(1);
+	const [rainZIndex, setRainZIndex] = useState(2);
+	const [bgZIndex, setBgZIndex] = useState(2);
+	const backgroundRef = useRef<HTMLDivElement>(null);
 	const pages = ["register", "about", "sponsors", "prizes", "faq", "contact"];
+
+	useEffect(() => {
+		const handleScroll = () => {
+			if (backgroundRef.current) {
+			  const scrollPosition = window.scrollY;
+			  const newScale = Math.max(0.25, 1 - scrollPosition / 1000);
+			  setBgImageScale(newScale);
+			  
+			  // Update rainZIndex based on scroll position
+			  if (scrollPosition > 300) {
+				setRainZIndex(0);
+				setBgZIndex(1);
+			  } else {
+				setRainZIndex(1);
+				setBgZIndex(0);
+			  }
+			}
+		  };
+		  
+		Events.scrollEvent.register("begin",handleScroll);
+		Events.scrollEvent.register("end",handleScroll);
+		window.addEventListener("scroll", handleScroll);
+
+		return () => {
+			Events.scrollEvent.remove("begin");
+			Events.scrollEvent.remove("end");
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
 
 	return (
 		<>
+			<div
+				className="background"
+				ref={backgroundRef}
+				style={{
+					zIndex: bgZIndex,
+					transform: `scale(${bgImageScale})`,
+					transition: "transform 0.5s ease",
+				}}
+			/>
+
+			<div 
+				className="rain-layer"
+				style={{
+					zIndex: rainZIndex,
+				}}
+			>
+				<Rain />
+			</div>
 			<main className="flex min-h-screen flex-col items-center p-24 main-container">
 				<h1 className="d3">hack dearborn 2</h1>
 				<div className="relative">
@@ -30,6 +84,8 @@ export default function Home() {
 					<h5 className="d5">10.22.2023</h5>
 				</div>
 				<NavBar pages={pages} />
+				<div className="extra-content" style={{ minHeight: "200vh" }}>
+				</div>
 			</main>
 		</>
 	);
