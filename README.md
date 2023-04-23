@@ -4,7 +4,7 @@ ground zero for Hack Dearborn 2
 
 ## changelog
 
-![image](public/demo.gif "Demo") 
+'![image]()
 
 ## design
 
