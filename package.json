@@ -23,7 +23,6 @@
 		"@types/react-dom": "18.0.11",
 		"autoprefixer": "10.4.14",
 		"typescript": "latest",
-		"bun-framework-next": "12.2.5",
 		"react-refresh": "0.14.0"
 	},
 	"bun-create": {
