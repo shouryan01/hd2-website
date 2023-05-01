@@ -2,7 +2,9 @@ import React, {useEffect, useRef, useState} from "react";
 import { Events } from "react-scroll";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import laptopSvg from "../public/laptop.svg";
+import laptopSvg from "../public/static/images/laptop.svg";
+import useSound from 'use-sound';
+import { delay } from "framer-motion";
 
 const Rain = dynamic(() => import("../components/Rain"), { ssr: false });
 
@@ -59,10 +61,38 @@ export default function Home() {
 		};
 	}, []);
 
+	const [play, { stop }] = useSound('/static/sounds/cyberpunk_cut.mp3');
+	const [startRain, setStartRain] = useState(false);
+	const [disrupt, startDistrupt] = useState(false);
+
+	if(disrupt) {
+		var backgroundImage = "background_city"
+	} else {
+		var backgroundImage = "background_cute"
+	}
+
+	if(disrupt) {
+		var style1 = "d3"
+	} else {
+		var style1 = "normal"
+	}
+
+	if(disrupt) {
+		var style2 = "d4"
+	} else {
+		var style2 = "normal"
+	}
+
+	if(disrupt) {
+		var style3 = "d5"
+	} else {
+		var style3 = "normal"
+	}
+
 	return (
 		<>
 			<div
-				className="background"
+				className={backgroundImage}
 				ref={backgroundRef}
 				style={{
 					zIndex: bgZIndex,
@@ -71,20 +101,47 @@ export default function Home() {
 				}}
 			/>
 
-			<div 
+			{startRain && (
+				<div 
 				className="rain-layer"
 				style={{
 					zIndex: rainZIndex,
 				}}
-			>
-				<Rain />
-			</div>
-			<main className="flex min-h-screen flex-col items-center p-24 main-container">
-				<h1 className="d3">hack dearborn 2</h1>
-				<div className="relative">
-				<h3 className="d4">Disrupt Reality</h3>
-				<h5 className="d5">10.22.2023</h5>
+				>
+					<Rain />
 				</div>
+			)}
+
+			<main className="flex min-h-screen flex-col items-center p-24 main-container">
+				<h1 className={style1}>hack dearborn 2</h1>
+				<div className="relative">
+				<h3 className={style2}>Disrupt Reality</h3>
+
+				<button
+					className="py-4 text-xl text-white bg-gray-800 px-7 hover:bg-gray-700 rounded-xl"
+					onClick={async () => {
+						play()
+						await new Promise(resolve => setTimeout(resolve, 4000));
+						setStartRain(true)
+						startDistrupt(true)
+					}}
+				>
+					Disrupt Reality
+				</button>	
+				<button
+					className="py-4 text-xl text-white bg-gray-800 px-7 hover:bg-gray-700 rounded-xl"
+					onClick={async () => {
+						stop()
+						setStartRain(false)
+						startDistrupt(false)
+					}}
+				>
+					Back to Reality
+				</button>
+
+				<h5 className={style3}>10.22.2023</h5>
+				</div>
+				
 				<NavBar pages={pages} />
 				<div className="extra-content" style={{ minHeight: "200vh" }}>
 				</div>
