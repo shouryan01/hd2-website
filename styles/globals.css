@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "cyberpunk";
-  src: url("/fonts/Cynatar.otf") format("opentype");
+  font-family: "cynatar";
+  src: url("../public/static/fonts/Cynatar.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -54,7 +54,7 @@ body {
 }
 .d4 {
   margin: 0.5em 0;
-  font-family: "cyberpunk", sans-serif;
+  font-family: "cynatar";
   font-size: 6em;
   color: #fff;
   text-align: center;

@@ -63,7 +63,7 @@ export default function Home() {
 
 	const [play, { stop }] = useSound('/static/sounds/cyberpunk_cut.mp3');
 	const [startRain, setStartRain] = useState(false);
-	const [disrupt, startDistrupt] = useState(false);
+	const [disrupt, startDisrupt] = useState(false);
 
 	if(disrupt) {
 		var backgroundImage = "background_city"
@@ -121,9 +121,9 @@ export default function Home() {
 					className="py-4 text-xl text-white bg-gray-800 px-7 hover:bg-gray-700 rounded-xl"
 					onClick={async () => {
 						play()
-						await new Promise(resolve => setTimeout(resolve, 4000));
+						await new Promise(resolve => setTimeout(resolve, 2000));
 						setStartRain(true)
-						startDistrupt(true)
+						startDisrupt(true)
 					}}
 				>
 					Disrupt Reality
@@ -133,7 +133,7 @@ export default function Home() {
 					onClick={async () => {
 						stop()
 						setStartRain(false)
-						startDistrupt(false)
+						startDisrupt(false)
 					}}
 				>
 					Back to Reality
