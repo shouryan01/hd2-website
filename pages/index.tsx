@@ -65,6 +65,7 @@ const Home: React.FC = () => {
 							</a>
 							))}
 						</div>
+					</div>
 				</main>
 				<a
 				id="mlh-trust-badge"
@@ -79,7 +80,7 @@ const Home: React.FC = () => {
 					className="w-full"
 				/>
 				</a>
-		</div>
+    		</div>
 		</>
   );
 };
