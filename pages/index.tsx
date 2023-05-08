@@ -55,7 +55,7 @@ const Home: React.FC = () => {
 							{pages.map((page, index) => (
 							<a
 								key={index}
-								href={`#${page.slug}`}
+								href={`${page.slug}`}
 								className="p-6 border-2 border-white rounded-lg dark:border-white hover:bg-blue-custom hover:border-blue-custom transition-all"
 							>
 								<div className="flex justify-between items-center">
