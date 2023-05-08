@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
+
 @font-face {
   font-family: "cyberpunk";
   src: url("/fonts/Cynatar.otf") format("opentype");
@@ -24,6 +26,7 @@
 }
 
 body {
+  font-family: "IBM Plex Mono", monospace;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -118,17 +121,6 @@ body {
   height: 100%;
   opacity: 0.3;
 }
-.laptop-container {
-  position: relative;
-  display: inline-block;
-}
-.laptop-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* This will make the wrapper take up the full height of the viewport */
-}
-
 
 .main-container {
   display: flex;
@@ -153,7 +145,7 @@ body {
   justify-content: space-between;
   align-items: center;
   list-style: none;
-  font-family: "Fira Code";
+  font-family: "Fira Code", monospace;
   font-weight: 700;
   font-size: 18px;
   padding: 0;
