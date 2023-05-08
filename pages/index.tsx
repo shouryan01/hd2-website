@@ -27,7 +27,9 @@ export default function Home() {
 								priority
 							/>
 						</div>
-						Register, About, Sponsors, Prizes, FAQ, Contact
+						<div style={{ whiteSpace: "nowrap" }}>
+						Register, About, Sponsors, Prizes, <a href="/faq/">FAQ</a>, Contact
+						</div>
 					</main>
               </>
 	);
