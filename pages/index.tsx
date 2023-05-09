@@ -8,7 +8,7 @@ const Home: React.FC = () => {
 	const [darkMode, setDarkMode] = useState(true);
 
 	const toggleDarkMode = () => {
-	setDarkMode(!darkMode);
+		setDarkMode(!darkMode);
 	};	
 
 	const pages = [
