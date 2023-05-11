@@ -2,6 +2,11 @@
 
 ground zero for Hack Dearborn 2
 
+## Color Scheme
+
+// #007aff
+// #ff66c4
+
 ## changelog
 <p align="center">
   <img src="public/demo.gif" />
