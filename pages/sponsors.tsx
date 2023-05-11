@@ -106,10 +106,10 @@ const SponsorsContainer = ({
 			Bronze: 4,
 		},
 		flex: {
-			Platinum: "w-12/12",
-			Gold: "w-6/12",
-			Silver: "w-4/12",
-			Bronze: "w-3/12",
+			Platinum: "lg:w-12/12",
+			Gold: "lg:w-6/12",
+			Silver: "lg:w-4/12",
+			Bronze: "lg:w-3/12",
 		},
 	};
 	const numLastRow = sponsors.length % tierMaps.grid[tier];
@@ -117,6 +117,8 @@ const SponsorsContainer = ({
 	return (
 		<div className="flex flex-col">
 			<div
+				// Dynamically loaded tailwind classes must be previously mentioned to safelist them
+				// Grid can have lg:grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 lg:grid-cols-4
 				className={`grid grid-cols-1 gap-2 lg:grid-cols-${tierMaps.grid[tier]}`}
 			>
 				{sponsors
@@ -132,7 +134,7 @@ const SponsorsContainer = ({
 					} flex justify-center lg:space-x-2`}
 				>
 					{sponsors.slice(-numLastRow).map((sponsor, index) => (
-						<div className={`w-full lg:${tierMaps.flex[tier]}`}>
+						<div className={`w-full ${tierMaps.flex[tier]}`}>
 							<SponsorContent key={index} sponsor={sponsor} />
 						</div>
 					))}
