@@ -1,16 +1,17 @@
 import React, {useEffect,useState} from "react";
 import { Events } from "react-scroll";
 import Image from "next/image";
+import Grid from "../components/grid";
 
 
 const Home: React.FC = () => {
-  const [darkMode, setDarkMode] = useState(true);
+	const [darkMode, setDarkMode] = useState(true);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };	
-  
-  const pages = [
+	const toggleDarkMode = () => {
+		setDarkMode(!darkMode);
+	};	
+
+	const pages = [
 	{ title: 'Register', slug: 'register' },
 	{ title: 'About', slug: 'about' },
 	{ title: 'Sponsors', slug: 'sponsors' },
@@ -21,7 +22,7 @@ const Home: React.FC = () => {
 
 	useEffect(() => {
 		const handleScroll = () => {};
-		  
+			
 		Events.scrollEvent.register("begin",handleScroll);
 		Events.scrollEvent.register("end",handleScroll);
 		window.addEventListener("scroll", handleScroll);
@@ -50,22 +51,7 @@ const Home: React.FC = () => {
 					<div className="text-center">
 						<h1 className="date">10.22.2023</h1>
 					</div>
-					<div className="container mx-auto p-4 flex justify-center">
-						<div className="w-2/3 grid grid-cols-2 md:grid-cols-3 gap-6">
-							{pages.map((page, index) => (
-							<a
-								key={index}
-								href={`${page.slug}`}
-								className="p-6 border-2 border-white rounded-lg dark:border-white hover:bg-blue-custom hover:border-blue-custom transition-all"
-							>
-								<div className="flex justify-between items-center">
-								<h4 className="text-xl font-bold mb-2">{page.title}</h4>
-								<span className="text-xl font-bold mb-2">➤</span>
-								</div>
-							</a>
-							))}
-						</div>
-					</div>
+					<Grid pages={pages}/>
 				</main>
 				<a
 				id="mlh-trust-badge"
