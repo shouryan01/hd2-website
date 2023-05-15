@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	darkMode: 'class',
+	darkMode: "class",
 	content: [
 		"./pages/**/*.{js,ts,jsx,tsx}",
 		"./components/**/*.{js,ts,jsx,tsx}",
@@ -9,13 +9,40 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				'pink-custom': '#ff66c4',
-				'blue-custom': '#007aff',},
+				primary: {
+					DEFAULT: "#007AFF",
+					50: "#FCFEFF",
+					100: "#E0EFFF",
+					200: "#A8D2FF",
+					300: "#70B5FF",
+					400: "#3897FF",
+					500: "#007AFF",
+					600: "#0064D1",
+					700: "#004EA3",
+					800: "#003875",
+					900: "#002247",
+					950: "#001730",
+				},
+				secondary: {
+					DEFAULT: "#FF66C4",
+					50: "#FFF0F9",
+					100: "#FFE0F3",
+					200: "#FFC2E7",
+					300: "#FFA3DC",
+					400: "#FF85D0",
+					500: "#FF66C4",
+					600: "#FF24AA",
+					700: "#E0008A",
+					800: "#9E0061",
+					900: "#5C0038",
+					950: "#3B0024",
+				},
+			},
 			fontFamily: {
 				mono: ["IBM Plex Mono", "monospace"],
 			},
 			backgroundColor: {
-				'dark-background': '#000',
+				"dark-background": "#000",
 			},
 			backgroundImage: {
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
