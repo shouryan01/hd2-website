@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+
 import { Events } from "react-scroll";
-import Image from "next/image";
 import Grid from "../components/grid";
+import Image from "next/image";
 
 const Home: React.FC = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -11,7 +12,7 @@ const Home: React.FC = () => {
   };
 
   const pages = [
-    { title: "Register", slug: "register" },
+    { title: "Apply", slug: "register" },
     { title: "About", slug: "about" },
     { title: "Sponsors", slug: "sponsors" },
     { title: "Prizes", slug: "prizes" },
@@ -41,6 +42,7 @@ const Home: React.FC = () => {
       <div className="fixed top-50 left-5 p-4 flex items-center justify-center h-10 w-10 bg-red-500">
         <button  onClick={async () => {
 			setScrollDisabled(false); //enable scrolling
+			console.log("clicked");
 		}}>
 		
           <svg
