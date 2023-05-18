@@ -81,14 +81,23 @@ const sponsors: Sponsor[] = [
 ];
 
 const SponsorContent = ({ sponsor }: { sponsor: Sponsor }) => {
-	const { name, logo, url } = sponsor;
+	const { name, logo, url, tier } = sponsor;
+	const tierMaps: { [key: string]: any } = {
+		Platinum: "from-slate-50 via-sky-200 to-slate-700",
+		Gold: "from-yellow-100 via-yellow-300 to-amber-500",
+		Silver: "from-zinc-200 via-zinc-50 to-zinc-400",
+		Bronze: "from-amber-900 via-rose-100 to-amber-700",
+	};
+
 	return (
 		<a href={url} target="_blank" rel="noreferrer">
-			<div className="relative flex h-40 w-full justify-center rounded-md border-2 p-4 md:p-6 lg:p-8">
+			<div
+				className={`group relative flex h-40 w-full justify-center rounded-md border-2 ${tierMaps[tier]} p-4 hover:bg-gradient-to-br md:p-6 lg:p-8`}
+			>
 				<img
 					src={logo}
 					alt={name}
-					className="transform object-contain transition-transform duration-200 hover:scale-110"
+					className="transform object-contain transition-transform duration-200 group-hover:scale-110"
 				/>
 			</div>
 		</a>
