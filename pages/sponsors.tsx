@@ -85,7 +85,11 @@ const SponsorContent = ({ sponsor }: { sponsor: Sponsor }) => {
 	return (
 		<a href={url} target="_blank" rel="noreferrer">
 			<div className="relative flex h-40 w-full justify-center rounded-md border-2 p-4 md:p-6 lg:p-8">
-				<img src={logo} alt={name} className="object-contain" />
+				<img
+					src={logo}
+					alt={name}
+					className="transform object-contain transition-transform duration-200 hover:scale-110"
+				/>
 			</div>
 		</a>
 	);
