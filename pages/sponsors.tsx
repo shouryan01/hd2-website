@@ -1,6 +1,9 @@
+import { useState } from "react";
+
 type Sponsor = {
 	name: string;
 	logo: string;
+	hoverLogo?: string;
 	url?: string;
 	tier: string;
 };
@@ -15,12 +18,14 @@ const sponsors: Sponsor[] = [
 	{
 		name: "Amazon",
 		logo: "/images/sponsors/Amazon.svg",
+		hoverLogo: "/images/sponsors/Amazon - Dark.svg",
 		url: "https://www.aboutamazon.com/",
 		tier: "Platinum",
 	},
 	{
 		name: "Bosch",
 		logo: "/images/sponsors/Bosch.svg",
+		hoverLogo: "/images/sponsors/Bosch - Dark.svg",
 		url: "https://www.bosch.us/",
 		tier: "Platinum",
 	},
@@ -32,7 +37,7 @@ const sponsors: Sponsor[] = [
 	},
 	{
 		name: "Little Caesars",
-		logo: "/images/sponsors/Little Caesars.svg",
+		logo: "/images/sponsors/Little Caesar's.svg",
 		url: "https://littlecaesars.com/en-us/",
 		tier: "Gold",
 	},
@@ -45,57 +50,69 @@ const sponsors: Sponsor[] = [
 	{
 		name: "Stand Out Stickers",
 		logo: "/images/sponsors/StandOut Stickers.svg",
+		hoverLogo: "/images/sponsors/StandOut Stickers - Dark.svg",
 		url: "https://www.standoutstickers.com/",
 		tier: "Silver",
 	},
 	{
 		name: "GitHub",
 		logo: "/images/sponsors/GitHub.svg",
+		hoverLogo: "/images/sponsors/GitHub - Dark.svg",
 		url: "http://github.com/",
 		tier: "Silver",
 	},
 	{
 		name: "University of Michigan Dearborn | College of Engineering and Computer Science",
 		logo: "/images/sponsors/UMD - CECS.png",
+		hoverLogo: "/images/sponsors/UMD - CECS - Dark.png",
 		url: "https://umdearborn.edu/cecs",
 		tier: "Silver",
 	},
 	{
 		name: "AI Futures",
 		logo: "/images/sponsors/AI Futures.svg",
+		hoverLogo: "/images/sponsors/AI Futures - Dark.svg",
 		url: "https://aifutures.us/",
 		tier: "Bronze",
 	},
 	{
 		name: "echo3D",
 		logo: "/images/sponsors/echo3D.png",
+		hoverLogo: "/images/sponsors/echo3D - Dark.png",
 		url: "https://www.echo3d.com/",
 		tier: "Bronze",
 	},
 	{
 		name: "Verbwire",
-		logo: "/images/sponsors/Verbwire.png",
+		logo: "/images/sponsors/Verbwire.svg",
+		hoverLogo: "/images/sponsors/Verbwire - Dark.svg",
 		url: "https://www.verbwire.com/",
 		tier: "Bronze",
 	},
 ];
 
 const SponsorContent = ({ sponsor }: { sponsor: Sponsor }) => {
-	const { name, logo, url, tier } = sponsor;
+	const { name, logo, hoverLogo, url, tier } = sponsor;
 	const tierMaps: { [key: string]: any } = {
 		Platinum: "from-slate-50 via-sky-200 to-slate-700",
 		Gold: "from-yellow-100 via-yellow-300 to-amber-500",
-		Silver: "from-zinc-200 via-zinc-50 to-zinc-400",
-		Bronze: "from-amber-900 via-rose-100 to-amber-700",
+		Silver: "from-slate-400 via-slate-100 to-slate-700",
+		Bronze: "from-amber-700 via-rose-100 to-amber-900",
 	};
+
+	const [isHovered, setIsHovered] = useState(false);
+	const handleMouseEnter = () => setIsHovered(true);
+	const handleMouseExit = () => setIsHovered(false);
 
 	return (
 		<a href={url} target="_blank" rel="noreferrer">
 			<div
 				className={`group relative flex h-40 w-full justify-center rounded-md border-2 ${tierMaps[tier]} p-4 hover:bg-gradient-to-br md:p-6 lg:p-8`}
+				onMouseEnter={handleMouseEnter}
+				onMouseLeave={handleMouseExit}
 			>
 				<img
-					src={logo}
+					src={isHovered && hoverLogo ? hoverLogo : logo}
 					alt={name}
 					className="transform object-contain transition-transform duration-200 group-hover:scale-110"
 				/>
