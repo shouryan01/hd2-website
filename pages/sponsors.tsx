@@ -107,7 +107,7 @@ const SponsorContent = ({ sponsor }: { sponsor: Sponsor }) => {
 	return (
 		<a href={url} target="_blank" rel="noreferrer">
 			<div
-				className={`group relative flex h-40 w-full justify-center rounded-md border-2 ${tierMaps[tier]} p-4 hover:bg-gradient-to-br md:p-6 lg:p-8`}
+				className={`transition-color group relative flex h-40 w-full justify-center rounded-md border-2 ${tierMaps[tier]} bg-[size:_200%] bg-[position:_0%_0%] p-4 duration-500 hover:bg-gradient-to-br hover:bg-[position:_75%_75%] md:p-6 lg:p-8`}
 				onMouseEnter={handleMouseEnter}
 				onMouseLeave={handleMouseExit}
 			>
