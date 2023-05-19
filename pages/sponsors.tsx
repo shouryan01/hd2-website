@@ -107,14 +107,14 @@ const SponsorContent = ({ sponsor }: { sponsor: Sponsor }) => {
 	return (
 		<a href={url} target="_blank" rel="noreferrer">
 			<div
-				className={`transition-color group relative flex h-40 w-full justify-center rounded-md border-2 ${tierMaps[tier]} bg-[size:_200%] bg-[position:_0%_0%] p-4 duration-500 hover:bg-gradient-to-br hover:bg-[position:_75%_75%] md:p-6 lg:p-8`}
+				className={`sponsor-card group ${tierMaps[tier]} hover:bg-gradient-to-br`}
 				onMouseEnter={handleMouseEnter}
 				onMouseLeave={handleMouseExit}
 			>
 				<img
 					src={isHovered && hoverLogo ? hoverLogo : logo}
 					alt={name}
-					className="transform object-contain transition-transform duration-200 group-hover:scale-110"
+					className="object-contain duration-200 group-hover:scale-110"
 				/>
 			</div>
 		</a>
