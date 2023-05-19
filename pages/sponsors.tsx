@@ -109,7 +109,7 @@ const SponsorContent = ({ sponsor }: { sponsor: Sponsor }) => {
 			href={url}
 			target="_blank"
 			rel="noreferrer"
-			className="flex rounded-md bg-white from-primary-500 to-secondary-500 p-0.5 hover:bg-gradient-to-br"
+			className="flex rounded-md bg-white from-primary to-secondary p-0.5 hover:bg-gradient-to-br"
 		>
 			<div
 				className={`sponsor-card group bg-black ${tierMaps[tier]} hover:bg-gradient-to-br`}
