@@ -9,7 +9,7 @@
   @apply bg-primary;
   box-shadow: 0 0 10px 10px #00224744, 0 0 50px theme(colors.primary.DEFAULT),
     0 0 100px theme(colors.primary.DEFAULT);
-  animation: bubble-up 15s linear infinite;
+  animation: bubble-up 15s cubic-bezier(0, 0.5, 0.75, 0.5) infinite;
 }
 .bubbles span:nth-child(even) {
   @apply bg-secondary;

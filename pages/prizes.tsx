@@ -57,11 +57,24 @@ const generateRandomNumbers = (
 	);
 };
 
+function generateLinearlySpacedNumbers(
+	start: number,
+	stop: number,
+	numItems: number,
+) {
+	const step = (stop - start) / (numItems - 1);
+	const arr = [];
+	for (let i = 0; i < numItems; i++) {
+		arr.push(start + step * i);
+	}
+	return arr;
+}
+
 const Prizes = () => {
 	const bubbleTimers = generateRandomNumbers(34, 10, 30);
 	const bubblePositions = generateRandomNumbers(34);
 	const prizeTimers = generateRandomNumbers(prizes.length, 10, 30);
-	const prizePositions = generateRandomNumbers(prizes.length, 0, 80);
+	const prizePositions = generateLinearlySpacedNumbers(0, 80, prizes.length);
 
 	return (
 		<div className="w-full px-10 pt-20 md:px-20 lg:px-40 lg:pb-20">
@@ -69,7 +82,7 @@ const Prizes = () => {
 				Prizes
 			</h1>
 			<div className="bubbles">
-				{bubbleTimers.slice(0, -prizes.length).map((t, i) => (
+				{bubbleTimers.map((t, i) => (
 					<span
 						style={{
 							animationDuration: `${300 / t}s`,
