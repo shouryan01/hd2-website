@@ -51,10 +51,29 @@ const generateRandomNumbers = (
 	[minNumber, maxNumber] =
 		minNumber > maxNumber ? [maxNumber, minNumber] : [minNumber, maxNumber];
 
-	return Array.from(
-		{ length },
-		() => Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber,
-	);
+	const numbers = [];
+
+	let previousNumber = null;
+	let twoPreviousNumber = null;
+
+	for (let i = 0; i < length; i++) {
+		let randomNumber =
+			Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber; // Generate a random number between 10 and 30
+
+		while (
+			randomNumber === previousNumber ||
+			randomNumber === twoPreviousNumber
+		) {
+			randomNumber =
+				Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+		}
+
+		numbers.push(randomNumber);
+		twoPreviousNumber = previousNumber;
+		previousNumber = randomNumber;
+	}
+
+	return numbers;
 };
 
 function generateLinearlySpacedNumbers(
