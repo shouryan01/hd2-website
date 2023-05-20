@@ -1,17 +1,15 @@
 .bubbles {
-  @apply relative flex flex-wrap;
+  @apply flex flex-wrap;
 }
 .bubbles span {
-  @apply relative mx-1 h-8 w-8 rounded-full bg-primary;
-  box-shadow: 0 0 0 10px #00224744,
-    0 0 50px theme(colors.primary.DEFAULT),
+  @apply mx-1 table h-8 w-8 min-w-fit rounded-full bg-primary p-4;
+  box-shadow: 0 0 10px 10px #00224744, 0 0 50px theme(colors.primary.DEFAULT),
     0 0 100px theme(colors.primary.DEFAULT);
   animation: bubble-up 15s linear infinite;
 }
 .bubbles span:nth-child(even) {
   @apply bg-secondary;
-  box-shadow: 0 0 0 10px #5C003844,
-    0 0 50px theme(colors.secondary.DEFAULT),
+  box-shadow: 0 0 10px 10px #5c003844, 0 0 50px theme(colors.secondary.DEFAULT),
     0 0 100px theme(colors.secondary.DEFAULT);
 }
 @keyframes bubble-up {
