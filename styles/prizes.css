@@ -1,8 +1,12 @@
 .bubbles {
-  @apply flex flex-wrap;
+  @apply relative flex flex-wrap;
 }
 .bubbles span {
-  @apply mx-1 table h-8 w-8 min-w-fit rounded-full bg-primary p-4;
+  @apply absolute table;
+  @apply mx-1 p-4;
+  @apply h-8 w-8 min-w-max;
+  @apply rounded-full;
+  @apply bg-primary;
   box-shadow: 0 0 10px 10px #00224744, 0 0 50px theme(colors.primary.DEFAULT),
     0 0 100px theme(colors.primary.DEFAULT);
   animation: bubble-up 15s linear infinite;

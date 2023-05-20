@@ -51,33 +51,17 @@ const generateRandomNumbers = (
 	[minNumber, maxNumber] =
 		minNumber > maxNumber ? [maxNumber, minNumber] : [minNumber, maxNumber];
 
-	const numbers = [];
-
-	let previousNumber = null;
-	let twoPreviousNumber = null;
-
-	for (let i = 0; i < length; i++) {
-		let randomNumber =
-			Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber; // Generate a random number between 10 and 30
-
-		while (
-			randomNumber === previousNumber ||
-			randomNumber === twoPreviousNumber
-		) {
-			randomNumber =
-				Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
-		}
-
-		numbers.push(randomNumber);
-		twoPreviousNumber = previousNumber;
-		previousNumber = randomNumber;
-	}
-
-	return numbers;
+	return Array.from(
+		{ length },
+		() => Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber,
+	);
 };
 
 const Prizes = () => {
-	const bubbleTimers = generateRandomNumbers(34 + prizes.length, 10, 30);
+	const bubbleTimers = generateRandomNumbers(34, 10, 30);
+	const bubblePositions = generateRandomNumbers(34);
+	const prizeTimers = generateRandomNumbers(prizes.length, 10, 30);
+	const prizePositions = generateRandomNumbers(prizes.length, 0, 80);
 
 	return (
 		<div className="w-full px-10 pt-20 md:px-20 lg:px-40 lg:pb-20">
@@ -85,23 +69,27 @@ const Prizes = () => {
 				Prizes
 			</h1>
 			<div className="bubbles">
-				{bubbleTimers.slice(0, -prizes.length).map((t) => (
-					<span style={{ animationDuration: `${300 / t}s` }}></span>
+				{bubbleTimers.slice(0, -prizes.length).map((t, i) => (
+					<span
+						style={{
+							animationDuration: `${300 / t}s`,
+							left: `${bubblePositions[i]}%`,
+						}}
+					></span>
 				))}
 				{prizes.map(
 					(p, i) =>
 						p && (
 							<span
 								style={{
-									animationDuration: `${
-										300 / bubbleTimers[bubbleTimers.length - i]
-									}s`,
+									animationDuration: `${300 / prizeTimers[i]}s`,
+									left: `${prizePositions[i]}%`,
 								}}
 							>
 								<img
 									src={p.image}
 									alt={p.title}
-									className="h-60 w-60 object-contain"
+									className="h-20 w-20 object-contain md:h-40 md:w-40 lg:h-60 lg:w-60"
 								/>
 							</span>
 						),
