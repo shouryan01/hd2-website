@@ -1,5 +1,5 @@
 .bubble-container {
-  @apply relative flex flex-wrap h-screen;
+  @apply relative flex h-screen flex-wrap;
 }
 .bubble {
   @apply absolute table;

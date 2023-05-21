@@ -107,6 +107,7 @@ const Prizes = () => {
 			<div className="bubble-container">
 				{bubbleTimers.map((t, i) => (
 					<span
+						key={i}
 						style={{
 							animationDuration: `${300 / t}s`,
 							left: `${bubblePositions[i]}%`,
@@ -118,6 +119,7 @@ const Prizes = () => {
 					(p, i) =>
 						p && (
 							<span
+								key={`prize_${i}`}
 								style={{
 									animationDuration: `${300 / prizeTimers[i]}s`,
 									left: `${prizePositions[i]}%`,
@@ -133,6 +135,17 @@ const Prizes = () => {
 									alt={p.title}
 									className="h-20 w-20 object-contain md:h-40 md:w-40 lg:h-60 lg:w-60"
 								/>
+								<div
+									className={`${
+										hoverIndex === i ? "visible" : "invisible"
+									} absolute inset-0 flex items-center justify-center`}
+								>
+									<div className="bg-black bg-opacity-10 p-2 backdrop-blur">
+										<p className="text-center font-bold text-white md:text-xl lg:text-2xl">
+											{p.title}
+										</p>
+									</div>
+								</div>
 							</span>
 						),
 				)}
