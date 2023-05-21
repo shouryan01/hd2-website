@@ -141,7 +141,7 @@ const Prizes = () => {
 									} absolute inset-0 flex items-center justify-center`}
 								>
 									<div className="bg-black bg-opacity-10 p-2 backdrop-blur">
-										<p className="text-center font-bold text-white md:text-xl lg:text-2xl">
+										<p className="text-center text-sm font-bold text-white md:text-lg lg:text-2xl">
 											{p.title}
 										</p>
 									</div>
