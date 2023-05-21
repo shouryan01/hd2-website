@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 type Prize = {
 	title: string;
 	image: string;
@@ -89,24 +91,27 @@ function generateLinearlySpacedNumbers(
 	return arr;
 }
 
+const bubbleTimers = generateRandomNumbers(34, 10, 30);
+const bubblePositions = generateRandomNumbers(34);
+const prizeTimers = generateRandomNumbers(prizes.length, 10, 30);
+const prizePositions = generateLinearlySpacedNumbers(0, 80, prizes.length);
+
 const Prizes = () => {
-	const bubbleTimers = generateRandomNumbers(34, 10, 30);
-	const bubblePositions = generateRandomNumbers(34);
-	const prizeTimers = generateRandomNumbers(prizes.length, 10, 30);
-	const prizePositions = generateLinearlySpacedNumbers(0, 80, prizes.length);
+	const [hoverIndex, setHoverIndex] = useState<Number | null>(null);
 
 	return (
-		<div className="w-full px-10 pt-20 md:px-20 lg:px-40 lg:pb-20">
-			<h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl">
+		<div className="my-5 w-full px-5 md:my-10 md:px-10 lg:my-20 lg:px-20">
+			<h1 className="mb-4 px-5 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:px-20 lg:text-6xl">
 				Prizes
 			</h1>
-			<div className="bubbles">
+			<div className="bubble-container">
 				{bubbleTimers.map((t, i) => (
 					<span
 						style={{
 							animationDuration: `${300 / t}s`,
 							left: `${bubblePositions[i]}%`,
 						}}
+						className={`bubble ${hoverIndex !== null ? "blur" : ""}`}
 					></span>
 				))}
 				{prizes.map(
@@ -117,6 +122,11 @@ const Prizes = () => {
 									animationDuration: `${300 / prizeTimers[i]}s`,
 									left: `${prizePositions[i]}%`,
 								}}
+								className={`bubble prize-bubble ${
+									hoverIndex !== null && hoverIndex !== i ? "blur" : ""
+								}`}
+								onMouseEnter={() => setHoverIndex(i)}
+								onMouseLeave={() => setHoverIndex(null)}
 							>
 								<img
 									src={p.image}
