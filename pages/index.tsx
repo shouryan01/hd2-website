@@ -96,45 +96,50 @@ export default function Home() {
 				</div>
 			)}
 
-			<main className="flex min-h-screen flex-col items-center p-24 main-container">
-				<h1 className={style1}>hack dearborn 2</h1>
-				<div className="relative">
-				<h3 className={style2}>Disrupt Reality</h3>
-
-				<button
+		<main className="flex min-h-screen flex-col items-center p-24 main-container">
+			<h1 className={style1}>hack dearborn 2</h1>
+			<div className="relative">
+				{ disrupt && <h3 className={style2}>Disrupt Reality</h3> }
+				
+				<div className="flex justify-center gap-4">
+				{!disrupt && <button
 					className="py-4 text-xl text-white bg-gray-800 px-7 hover:bg-gray-700 rounded-xl"
 					onClick={async () => {
-						play()
-						await new Promise(resolve => setTimeout(resolve, 2000));
-						setStartRain(true)
-						startDisrupt(true)
+					play();
+					await new Promise((resolve) => setTimeout(resolve, 2000));
+					setStartRain(true);
+					startDisrupt(true);
 					}}
 				>
 					Disrupt Reality
-				</button>	
-				<button
+				</button>}
+				
+				{ startRain && (
+					<button
 					className="py-4 text-xl text-white bg-gray-800 px-7 hover:bg-gray-700 rounded-xl"
 					onClick={async () => {
-						stop()
-						setStartRain(false)
-						startDisrupt(false)
+						stop();
+						setStartRain(false);
+						startDisrupt(false);
 					}}
-				>
+					>
 					Back to Reality
-				</button>
+					</button>
+				)}
+				</div>
 
 				<h5 className={style3}>10.22.2023</h5>
-				</div>
-				
-				<NavBar pages={pages} />
-				<div className="extra-content" style={{ minHeight: "200vh" }}>
-				</div>
-				<div className="laptop-wrapper">
+			</div>
+
+			{ disrupt && <NavBar pages={pages} /> }
+
+			<div className="extra-content" style={{ minHeight: "200vh" }}></div>
+			<div className="laptop-wrapper">
 				<div className="laptop-container">
-					<Image src={laptopSvg} alt="Laptop" />
+				<Image src={laptopSvg} alt="Laptop" />
 				</div>
-				</div>
-			</main>
+			</div>
+		</main>
 		</>
 	);
 }
