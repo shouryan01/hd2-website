@@ -18,10 +18,11 @@ const Home: React.FC = () => {
     { title: "Prizes", slug: "prizes" },
     { title: "FAQ", slug: "faq" },
     { title: "Contact", slug: "contact" },
+	{ title: "Our Team", slug: "ourteam" },
   ];
 
   useEffect(() => {
-	document.body.style.overflow = scrollDisabled ? "hidden" : "auto";
+	document.body.style.overflow = scrollDisabled ? "auto" : "hidden";
     const handleScroll = () => {};
 	
     Events.scrollEvent.register("begin", handleScroll);
