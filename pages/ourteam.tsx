@@ -15,7 +15,7 @@ const ourTeam = () => {
         {url: "RosyShrestha.jpg", name: "Rosy Shrestha", link: "https://www.linkedin.com/in/rosyshrestha/"},
         {url: "souadOmar.jpeg", name: "Souad Omar", link: "https://www.linkedin.com/in/souad-omar-0105aa217/"},
         {url: "Shashanka-Prajapati.jpg", name: "Shashanka Prajapati", link: "https://www.linkedin.com/in/shashanka-prajapati/"},
-        //{url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9v8v7NEXwFbm68QdvNkgYtLvsNc3XnveR1tueabEyiCQQym1erVEDl8V_MEvnOgCXyHM&usqp=CAU", name: "Kanika"},
+        {url: "ali.jpg", name: "Ali Al Zein", link: "https://www.linkedin.com/in/alielzei/"},
         //{url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9v8v7NEXwFbm68QdvNkgYtLvsNc3XnveR1tueabEyiCQQym1erVEDl8V_MEvnOgCXyHM&usqp=CAU", name: "Maryam"},
         //{url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9v8v7NEXwFbm68QdvNkgYtLvsNc3XnveR1tueabEyiCQQym1erVEDl8V_MEvnOgCXyHM&usqp=CAU", name: "Regan Maharjan"},
         //{url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9v8v7NEXwFbm68QdvNkgYtLvsNc3XnveR1tueabEyiCQQym1erVEDl8V_MEvnOgCXyHM&usqp=CAU", name: "  "},
