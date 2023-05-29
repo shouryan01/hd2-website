@@ -1,10 +1,11 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
+
 import { Events } from "react-scroll";
-import dynamic from "next/dynamic";
 import Image from "next/image";
+import { delay } from "framer-motion";
+import dynamic from "next/dynamic";
 import laptopSvg from "../public/static/images/laptop.svg";
 import useSound from 'use-sound';
-import { delay } from "framer-motion";
 
 const Rain = dynamic(() => import("../components/Rain"), { ssr: false });
 const NavBar = dynamic(() => import("../components/NavBar"), { ssr: true });
@@ -19,23 +20,23 @@ export default function Home() {
 	useEffect(() => {
 		const handleScroll = () => {
 			if (backgroundRef.current) {
-			  const scrollPosition = window.scrollY;
-			  const newScale = Math.max(0.1, 1 - scrollPosition / 1000);
-			  setBgImageScale(newScale);
-			  
-			  // Update rainZIndex based on scroll position
-			  if (scrollPosition > 300) {
-				setRainZIndex(0);
-				setBgZIndex(1);
-			  } else {
-				setRainZIndex(1);
-				setBgZIndex(0);
-			  }
+				const scrollPosition = window.scrollY;
+				const newScale = Math.max(0.1, 1 - scrollPosition / 1000);
+				setBgImageScale(newScale);
+
+				// Update rainZIndex based on scroll position
+				if (scrollPosition > 300) {
+					setRainZIndex(0);
+					setBgZIndex(1);
+				} else {
+					setRainZIndex(1);
+					setBgZIndex(0);
+				}
 			}
-		  };
-		  
-		Events.scrollEvent.register("begin",handleScroll);
-		Events.scrollEvent.register("end",handleScroll);
+		};
+
+		Events.scrollEvent.register("begin", handleScroll);
+		Events.scrollEvent.register("end", handleScroll);
 		window.addEventListener("scroll", handleScroll);
 
 		return () => {
@@ -49,25 +50,25 @@ export default function Home() {
 	const [startRain, setStartRain] = useState(false);
 	const [disrupt, startDisrupt] = useState(false);
 
-	if(disrupt) {
+	if (disrupt) {
 		var backgroundImage = "background_city"
 	} else {
 		var backgroundImage = "background_cute"
 	}
 
-	if(disrupt) {
+	if (disrupt) {
 		var style1 = "d3"
 	} else {
 		var style1 = "normal"
 	}
 
-	if(disrupt) {
+	if (disrupt) {
 		var style2 = "d4"
 	} else {
 		var style2 = "normal"
 	}
 
-	if(disrupt) {
+	if (disrupt) {
 		var style3 = "d5"
 	} else {
 		var style3 = "normal"
@@ -86,11 +87,11 @@ export default function Home() {
 			/>
 
 			{startRain && (
-				<div 
-				className="rain-layer"
-				style={{
-					zIndex: rainZIndex,
-				}}
+				<div
+					className="rain-layer"
+					style={{
+						zIndex: rainZIndex,
+					}}
 				>
 					<Rain />
 				</div>
@@ -99,40 +100,45 @@ export default function Home() {
 			<main className="flex min-h-screen flex-col items-center p-24 main-container">
 				<h1 className={style1}>hack dearborn 2</h1>
 				<div className="relative">
-				<h3 className={style2}>Disrupt Reality</h3>
+					{disrupt && <h3 className={style2}>Disrupt Reality</h3>}
 
-				<button
-					className="py-4 text-xl text-white bg-gray-800 px-7 hover:bg-gray-700 rounded-xl"
-					onClick={async () => {
-						play()
-						await new Promise(resolve => setTimeout(resolve, 2000));
-						setStartRain(true)
-						startDisrupt(true)
-					}}
-				>
-					Disrupt Reality
-				</button>	
-				<button
-					className="py-4 text-xl text-white bg-gray-800 px-7 hover:bg-gray-700 rounded-xl"
-					onClick={async () => {
-						stop()
-						setStartRain(false)
-						startDisrupt(false)
-					}}
-				>
-					Back to Reality
-				</button>
+					<div className="flex justify-center gap-4">
+						{!disrupt && <button
+							className="py-4 text-xl text-white bg-gray-800 px-7 hover:bg-gray-700 rounded-xl"
+							onClick={async () => {
+								play();
+								await new Promise((resolve) => setTimeout(resolve, 2000));
+								setStartRain(true);
+								startDisrupt(true);
+							}}
+						>
+							Disrupt Reality
+						</button>}
 
-				<h5 className={style3}>10.22.2023</h5>
+						{startRain && (
+							<button
+								className="py-4 text-xl text-white bg-gray-800 px-7 hover:bg-gray-700 rounded-xl"
+								onClick={async () => {
+									stop();
+									setStartRain(false);
+									startDisrupt(false);
+								}}
+							>
+								Back to Reality
+							</button>
+						)}
+					</div>
+
+					<h5 className={style3}>10.22.2023</h5>
 				</div>
-				
-				<NavBar pages={pages} />
-				<div className="extra-content" style={{ minHeight: "200vh" }}>
-				</div>
+
+				{disrupt && <NavBar pages={pages} />}
+
+				<div className="extra-content" style={{ minHeight: "200vh" }}></div>
 				<div className="laptop-wrapper">
-				<div className="laptop-container">
-					<Image src={laptopSvg} alt="Laptop" />
-				</div>
+					<div className="laptop-container">
+						<Image src={laptopSvg} alt="Laptop" />
+					</div>
 				</div>
 			</main>
 		</>
