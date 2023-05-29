@@ -1,0 +1,5 @@
+.sponsor-card {
+  @apply flex h-40 w-full justify-center;
+  @apply p-4 md:p-6 lg:p-8;
+  @apply bg-[size:_200%] bg-[position:_0%_0%] duration-500 hover:bg-[position:_75%_75%];
+}
