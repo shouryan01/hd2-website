@@ -1,0 +1,33 @@
+.bubble-container {
+  @apply relative flex h-screen flex-wrap;
+}
+.bubble {
+  @apply absolute table;
+  @apply mx-1 p-4;
+  @apply h-8 w-8 min-w-max;
+  @apply rounded-full;
+  @apply bg-primary;
+  box-shadow: 0 0 10px 10px #00224744, 0 0 50px theme(colors.primary.DEFAULT),
+    0 0 100px theme(colors.primary.DEFAULT);
+  animation: bubble-up 1s cubic-bezier(0, 0.5, 0.75, 0.5) infinite;
+}
+.bubble:nth-child(even) {
+  @apply bg-secondary;
+  box-shadow: 0 0 10px 10px #5c003844, 0 0 50px theme(colors.secondary.DEFAULT),
+    0 0 100px theme(colors.secondary.DEFAULT);
+}
+@keyframes bubble-up {
+  0% {
+    transform: translateY(100vh) scale(0);
+  }
+  100% {
+    transform: translateY(0vh) scale(1);
+  }
+}
+
+.prize-bubble {
+  &:hover {
+    animation-play-state: paused;
+    @apply z-10;
+  }
+}
