@@ -18,28 +18,28 @@ const Home: React.FC = () => {
     { title: "Prizes", slug: "prizes" },
     { title: "FAQ", slug: "faq" },
     { title: "Contact", slug: "contact" },
-	{ title: "Our Team", slug: "ourteam" },
+    { title: "Our Team", slug: "ourteam" },
   ];
 
-  useEffect(() => {
-	document.body.style.overflow = scrollDisabled ? "auto" : "hidden";
-    const handleScroll = () => {};
-	
-    Events.scrollEvent.register("begin", handleScroll);
-    Events.scrollEvent.register("end", handleScroll);
-    window.addEventListener("scroll", handleScroll);
+  // useEffect(() => {
+  //   document.body.style.overflow = scrollDisabled ? "auto" : "hidden";
+  //   const handleScroll = () => { };
 
-    return () => {
-      Events.scrollEvent.remove("begin");
-      Events.scrollEvent.remove("end");
-      window.removeEventListener("scroll", handleScroll);
-    };
-	
-  }, [scrollDisabled]);
+  //   Events.scrollEvent.register("begin", handleScroll);
+  //   Events.scrollEvent.register("end", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   return () => {
+  //     Events.scrollEvent.remove("begin");
+  //     Events.scrollEvent.remove("end");
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+
+  // }, [scrollDisabled]);
 
   return (
     <>
-	
+
       {/* <div className="fixed top-50 left-5 p-4 flex items-center justify-center h-10 w-10 bg-red-500">
         <button  onClick={async () => {
 			setScrollDisabled(!scrollDisabled); //enable scrolling
@@ -56,9 +56,8 @@ const Home: React.FC = () => {
         </button>
       </div> */}
       <div
-        className={`min-h-screen transition-colors duration-500 ${
-          darkMode ? "bg-dark-background text-white" : "bg-white text-black"
-        }`}
+        className={`min-h-screen transition-colors duration-500 ${darkMode ? "bg-dark-background text-white" : "bg-white text-black"
+          }`}
       >
         <header className="container mx-auto mb-0 flex justify-center items-center">
           <div className="logo">
