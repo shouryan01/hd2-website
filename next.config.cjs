@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    domains: ['static.vecteezy.com'],
+  },
   reactStrictMode: true,
   webpack: (config, { dev, isServer }) => {
     // Replace React with Preact only in client production build
