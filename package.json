@@ -37,13 +37,15 @@
     "typescript": "latest"
   },
   "bun-create": {
-    "postinstall": ["bun bun --use next"],
+    "postinstall": [
+      "bun bun --use next"
+    ],
     "start": "bun dev"
   },
   "module": "index.ts",
   "type": "module",
   "volta": {
     "node": "18.16.0",
-    "npm": "9.6.4"
+    "npm": "9.6.7"
   }
 }
