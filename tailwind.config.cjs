@@ -13,6 +13,11 @@ module.exports = {
 					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
 			},
 		},
+		fontFamily: {
+			'Chalkduster': ['Chalkduster', 'sans-serif'],
+			'Papyrus': ['papyrus', 'cursive'],
+			'Copperplate': ['Copperplate', 'fantasy'],
+		},
 	},
 	plugins: [],
 };
