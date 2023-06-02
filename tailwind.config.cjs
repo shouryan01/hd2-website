@@ -17,6 +17,8 @@ module.exports = {
 			'Chalkduster': ['Chalkduster', 'sans-serif'],
 			'Papyrus': ['papyrus', 'cursive'],
 			'Copperplate': ['Copperplate', 'fantasy'],
+			'RubikGlitch': ['Rubik Glitch', 'sans-serif'],
+			'cynatar': ['cynatar', 'sans-serif'],
 		},
 	},
 	plugins: [],

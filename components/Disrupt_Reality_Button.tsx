@@ -11,7 +11,7 @@ function Disrupt_Reality_Button() {
                     </g>
                 </svg>
             </span>
-        </div>
+        </div >
     )
 };
 

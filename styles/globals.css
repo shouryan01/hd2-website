@@ -45,22 +45,22 @@ body {
 .d3 {
   margin: 0.5em 0;
   font-family: "Rubik Glitch", sans-serif;
-  font-size: 5em;
+  font-size: calc(1rem + 6.5vw);
   color: #fff;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
-  text-shadow: -0.09em 0 0 #00ff9f, 0.09em 0 0 #d600ff;
+  letter-spacing: 0.2em;
+  text-shadow: -0.09em 0 0 #ff66c4, 0.09em 0 0 #007aff;
+  margin-top: calc(10rem + 10vw);
 }
 .d4 {
-  margin: 0.5em 0;
   font-family: "cynatar";
-  font-size: 6em;
+  font-size: calc(1rem + 5.5vw);
   color: #fff;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  text-shadow: -0.09em 0 0 #00ff9f, 0.09em 0 0  	#d600ff;
+  letter-spacing: 0.1em;
+  text-shadow: -0.09em 0 0 #ff66c4, 0.09em 0 0  	#007aff;
 }
 .d5 {
   margin: 0.5em 0;
@@ -169,13 +169,13 @@ body {
 }
 
 .nav-link::before {
-  color: #ec2513;
+  color: #ff66c4;
   z-index: -1;
   animation: glitch 1s infinite;
 }
 
 .nav-link::after {
-  color: #c6ffff;
+  color: #007aff;
   z-index: -1;
   animation: glitch 1s infinite reverse;
 }

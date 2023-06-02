@@ -4,9 +4,10 @@ import Disrupt_Reality_Button from "@/components/Disrupt_Reality_Button";
 import { Events } from "react-scroll";
 import Image from "next/image";
 import MLH_Trust from "../components/MLH_Trust";
-import { delay } from "framer-motion";
+import MuteButton from "@/components/Mute_Button";
 import dynamic from "next/dynamic";
 import laptopSvg from "../public/static/images/laptop.svg";
+import { useGlitch } from 'react-powerglitch'
 import useSound from 'use-sound';
 
 const Rain = dynamic(() => import("../components/Rain"), { ssr: false });
@@ -14,6 +15,7 @@ const NavBar = dynamic(() => import("../components/NavBar"), { ssr: true });
 
 export default function Home() {
   const [bgImageScale, setBgImageScale] = useState(1);
+  const [playing, setPlaying] = useState(false);
   const [rainZIndex, setRainZIndex] = useState(2);
   const [bgZIndex, setBgZIndex] = useState(2);
   const backgroundRef = useRef<HTMLDivElement>(null);
@@ -48,7 +50,7 @@ export default function Home() {
     };
   }, []);
 
-  const [play, { stop }] = useSound('/static/sounds/cyberpunk_cut.mp3');
+  const [play, { stop, pause }] = useSound('/static/sounds/cyberpunk_cut.mp3');
   const [startRain, setStartRain] = useState(false);
   const [disrupt, startDisrupt] = useState(false);
 
@@ -76,6 +78,16 @@ export default function Home() {
     var style3 = "normal"
   }
 
+  const glitch = useGlitch();
+
+  const handleClick = async () => {
+    play();
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    setStartRain(true);
+    startDisrupt(true);
+    setPlaying(true);
+  };
+
   return (
     <>
       <div
@@ -100,8 +112,27 @@ export default function Home() {
       )}
 
       <main className="flex min-h-screen flex-col items-center p-24 main-container">
+        {disrupt && (<button onClick={() => {
+          if (playing) {
+            pause();
+            setPlaying(false);
+          }
+          else {
+            play();
+            setPlaying(true);
+          }
+        }}>
+          <MuteButton />
+        </button>)}
         <MLH_Trust />
-        <h1 className="font-Chalkduster text-7xl sm:text-8xl mt-36 text-center">Hack Dearborn2</h1>
+
+        {!disrupt && (
+          <h1 className={`mt-36 text-center ${disrupt ? 'font-RubikGlitch text-7xl sm:text-8xl md:text-9xl' : 'font-Chalkduster text-7xl sm:text-8xl'}`}>Hack Dearborn2</h1>
+        )}
+        {disrupt && (
+          <h1 className={style1}>Hack Dearborn2</h1>
+        )}
+
         <div className="relative">
           {disrupt && <h3 className={style2}>Disrupt Reality</h3>}
 
@@ -123,18 +154,12 @@ export default function Home() {
           <h5 className="font-Papyrus text-5xl sm:text-7xl">10.22.2023</h5>
         </div>
 
-        {!disrupt && <button
-          onClick={async () => {
-            play();
-            await new Promise((resolve) => setTimeout(resolve, 2000));
-            setStartRain(true);
-            startDisrupt(true);
-          }}
+        {!disrupt && <div><button
+          onClick={handleClick}
+          ref={glitch.ref}
         >
           <Disrupt_Reality_Button />
-        </button>}
-
-
+        </button></div>}
 
         {disrupt && <NavBar pages={pages} />}
 
