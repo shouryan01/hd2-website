@@ -21,14 +21,22 @@ export default function Home() {
   const backgroundRef = useRef<HTMLDivElement>(null);
   const pages = ["register", "about", "sponsors", "prizes", "faq", "contact"];
 
+  const [hideButton, setHideButton] = useState(true);
+  const [hideName, setHideName] = useState(true);
+  const [hideTheme, sethideTheme] = useState(true);
+
+  const [play, { stop, pause }] = useSound('/static/sounds/cyberpunk_cut.mp3');
+  const [startRain, setStartRain] = useState(false);
+
+  const [disrupt, startDisrupt] = useState(true);
+  const [scrollDisabled, setScrollDisabled] = useState(true);
+
   useEffect(() => {
     const handleScroll = () => {
       if (backgroundRef.current) {
         const scrollPosition = window.scrollY;
         const newScale = Math.max(0.1, 1 - scrollPosition / 1000);
         setBgImageScale(newScale);
-
-        // Update rainZIndex based on scroll position
         if (scrollPosition > 300) {
           setRainZIndex(0);
           setBgZIndex(1);
@@ -50,9 +58,21 @@ export default function Home() {
     };
   }, []);
 
-  const [play, { stop, pause }] = useSound('/static/sounds/cyberpunk_cut.mp3');
-  const [startRain, setStartRain] = useState(false);
-  const [disrupt, startDisrupt] = useState(false);
+  useEffect(() => {
+    document.body.style.overflow = scrollDisabled ? "auto" : "hidden";
+    const handleScroll = () => { };
+
+    Events.scrollEvent.register("begin", handleScroll);
+    Events.scrollEvent.register("end", handleScroll);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      Events.scrollEvent.remove("begin");
+      Events.scrollEvent.remove("end");
+      window.removeEventListener("scroll", handleScroll);
+    };
+
+  }, [scrollDisabled]);
 
   if (disrupt) {
     var backgroundImage = "background_city"
@@ -60,32 +80,28 @@ export default function Home() {
     var backgroundImage = "background_cute"
   }
 
-  if (disrupt) {
-    var style1 = "d3"
-  } else {
-    var style1 = "normal"
-  }
-
-  if (disrupt) {
-    var style2 = "d4"
-  } else {
-    var style2 = "normal"
-  }
-
-  if (disrupt) {
-    var style3 = "d5"
-  } else {
-    var style3 = "normal"
-  }
-
   const glitch = useGlitch();
 
   const handleClick = async () => {
     play();
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    setStartRain(true);
-    startDisrupt(true);
+
     setPlaying(true);
+    await new Promise((resolve) => setTimeout(resolve, 1600));
+    setStartRain(true);
+
+    await new Promise((resolve) => setTimeout(resolve, 2650));
+    setHideButton(false);
+
+    await new Promise((resolve) => setTimeout(resolve, 2650));
+    setHideName(false);
+
+    await new Promise((resolve) => setTimeout(resolve, 2650));
+    sethideTheme(false);
+
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    startDisrupt(true);
+
+    setScrollDisabled(true);
   };
 
   return (
@@ -124,46 +140,59 @@ export default function Home() {
         }}>
           <MuteButton />
         </button>)}
-        <MLH_Trust />
+        {disrupt && (<MLH_Trust />)}
 
-        {!disrupt && (
+        {hideName && (
           <h1 className={`mt-36 text-center ${disrupt ? 'font-RubikGlitch text-7xl sm:text-8xl md:text-9xl' : 'font-Chalkduster text-7xl sm:text-8xl'}`}>Hack Dearborn2</h1>
         )}
-        {disrupt && (
-          <h1 className={style1}>Hack Dearborn2</h1>
+        {!hideName && (
+          <h1 className="d3">Hack Dearborn2</h1>
         )}
 
         <div className="relative">
-          {disrupt && <h3 className={style2}>Disrupt Reality</h3>}
+          {!hideTheme && <h3 className="d4">Disrupt Reality</h3>}
 
           <div className="flex justify-center gap-4">
-            {startRain && (
+            {disrupt && (
               <button
                 className="py-4 text-xl text-white bg-gray-800 px-7 hover:bg-gray-700"
                 onClick={async () => {
                   stop();
                   setStartRain(false);
                   startDisrupt(false);
+                  setScrollDisabled(false);
                 }}
               >
                 Back to Reality
               </button>
             )}
           </div>
-
-          <h5 className="font-Papyrus text-5xl sm:text-7xl">10.22.2023</h5>
+          {hideTheme && !disrupt && (
+            <h5 className="font-Papyrus text-5xl sm:text-7xl">10.22.2023</h5>
+          )}
         </div>
 
-        {!disrupt && <div><button
+
+
+        {disrupt && (<div className="down-arrow"></div>)}
+
+        {!disrupt && hideButton && <div><button
           onClick={handleClick}
           ref={glitch.ref}
         >
           <Disrupt_Reality_Button />
+
         </button></div>}
 
-        {disrupt && <NavBar pages={pages} />}
+        {/* {disrupt && <NavBar pages={pages} />} */}
 
         <div className="extra-content" style={{ minHeight: "100vh" }}></div>
+        <div className="laptop-wrapper">
+          <div className="laptop-container">
+            <Image src={laptopSvg} alt="Laptop" />
+          </div>
+        </div>
+
         <div className="laptop-wrapper">
           <div className="laptop-container">
             <Image src={laptopSvg} alt="Laptop" />
