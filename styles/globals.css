@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "./prizes";
+@import "./sponsors";
+
 @font-face {
   font-family: "cynatar";
   src: url("../public/static/fonts/Cynatar.otf") format("opentype");
