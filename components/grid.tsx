@@ -1,6 +1,5 @@
 // Desc: Grid component for displaying pages
 import Link from "next/link";
-
 import { SliderButton } from "@typeform/embed-react";
 
 type Page = {
@@ -16,7 +15,8 @@ const Grid = ({ pages }: { pages: Array<Page> }) => {
 					page.slug === "register" ? (
 						<SliderButton
 							id={"oNcQNjvg"}
-							className="p-6 border-2 border-white rounded-lg dark:border-white hover:bg-blue-custom hover:border-blue-custom transition-all"
+							width={5000}
+							className=" p-6 border-2 border-white rounded-lg dark:border-white hover:bg-blue-custom hover:border-blue-custom transition-all"
 						>
 							<div className="flex justify-between items-center">
 								<h4 className="text-xl font-bold mb-2">{page.title}</h4>
