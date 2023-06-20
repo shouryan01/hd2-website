@@ -1,12 +1,13 @@
 @import "./prizes";
 @import "./sponsors";
 @import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
+
 
 @font-face {
   font-family: "cynatar";
