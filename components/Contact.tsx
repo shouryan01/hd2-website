@@ -3,7 +3,7 @@ import ContactLink from "@/components/ContactLink"
 const Contact = () => {
     return (
         <>
-            <div className="mx-auto max-w-5xl overflow-hidden mb-48">
+            <div className="mx-auto max-w-5xl overflow-hidden">
                 <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-white dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
                     Contact
                 </h1>

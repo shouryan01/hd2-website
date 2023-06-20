@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import About from "@/components/About";
+import Contact from "./contact";
 import Disrupt_Reality_Button from "@/components/Disrupt_Reality_Button";
 import { Events } from "react-scroll";
 import Faq from "@/components/Faq";
@@ -31,7 +32,7 @@ export default function Home() {
   const [play, { stop, pause }] = useSound('/static/sounds/cyberpunk_cut.mp3');
   const [startRain, setStartRain] = useState(false);
 
-  const [disrupt, startDisrupt] = useState(true);
+  const [disrupt, startDisrupt] = useState(false);
   const [scrollDisabled, setScrollDisabled] = useState(true);
 
   useEffect(() => {
@@ -187,15 +188,16 @@ export default function Home() {
 
         </button></div>}
 
-        <About />
-
-        <Prizes />
-
-        <Sponsors />
-
-        <Faq />
-
-        <OurTeam />
+        {disrupt && (
+          <>
+            <About />
+            <Prizes />
+            <Sponsors />
+            <Faq />
+            <Contact />
+            <OurTeam />
+          </>
+        )}
       </main>
     </>
   );
