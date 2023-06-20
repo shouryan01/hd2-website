@@ -1,29 +1,55 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+
+import About from "@/components/About";
+import Disrupt_Reality_Button from "@/components/Disrupt_Reality_Button";
 import { Events } from "react-scroll";
 import Image from "next/image";
-import Grid from "../components/grid";
+import MLH_Trust from "../components/MLH_Trust";
+import MuteButton from "@/components/Mute_Button";
+import Prizes from "@/components/Prizes";
+import Sponsors from "@/components/Sponsors";
+import dynamic from "next/dynamic";
+import laptopSvg from "../public/static/images/laptop.svg";
+import { useGlitch } from 'react-powerglitch'
+import useSound from 'use-sound';
 
-const Home: React.FC = () => {
-  const [darkMode, setDarkMode] = useState(true);
+const Rain = dynamic(() => import("../components/Rain"), { ssr: false });
+const NavBar = dynamic(() => import("../components/NavBar"), { ssr: true });
+
+export default function Home() {
+  const [bgImageScale, setBgImageScale] = useState(1);
+  const [playing, setPlaying] = useState(false);
+  const [rainZIndex, setRainZIndex] = useState(2);
+  const [bgZIndex, setBgZIndex] = useState(2);
+  const backgroundRef = useRef<HTMLDivElement>(null);
+  const pages = ["register", "about", "sponsors", "prizes", "faq", "contact"];
+
+  const [hideButton, setHideButton] = useState(true);
+  const [hideName, setHideName] = useState(true);
+  const [hideTheme, sethideTheme] = useState(true);
+
+  const [play, { stop, pause }] = useSound('/static/sounds/cyberpunk_cut.mp3');
+  const [startRain, setStartRain] = useState(false);
+
+  const [disrupt, startDisrupt] = useState(true);
   const [scrollDisabled, setScrollDisabled] = useState(true);
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
-
-  const pages = [
-    { title: "Register", slug: "register" },
-    { title: "About", slug: "about" },
-    { title: "Sponsors", slug: "sponsors" },
-    { title: "Prizes", slug: "prizes" },
-    { title: "FAQ", slug: "faq" },
-    { title: "Contact", slug: "contact" },
-	{ title: "Our Team", slug: "ourteam" },
-  ];
 
   useEffect(() => {
-	document.body.style.overflow = scrollDisabled ? "auto" : "hidden";
-    const handleScroll = () => {};
-	
+    const handleScroll = () => {
+      if (backgroundRef.current) {
+        const scrollPosition = window.scrollY;
+        const newScale = Math.max(0.1, 1 - scrollPosition / 1000);
+        setBgImageScale(newScale);
+        if (scrollPosition > 300) {
+          setRainZIndex(0);
+          setBgZIndex(1);
+        } else {
+          setRainZIndex(1);
+          setBgZIndex(0);
+        }
+      }
+    };
+
     Events.scrollEvent.register("begin", handleScroll);
     Events.scrollEvent.register("end", handleScroll);
     window.addEventListener("scroll", handleScroll);
@@ -33,64 +59,149 @@ const Home: React.FC = () => {
       Events.scrollEvent.remove("end");
       window.removeEventListener("scroll", handleScroll);
     };
-	
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = scrollDisabled ? "auto" : "hidden";
+    const handleScroll = () => { };
+
+    Events.scrollEvent.register("begin", handleScroll);
+    Events.scrollEvent.register("end", handleScroll);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      Events.scrollEvent.remove("begin");
+      Events.scrollEvent.remove("end");
+      window.removeEventListener("scroll", handleScroll);
+    };
+
   }, [scrollDisabled]);
+
+  if (disrupt) {
+    var backgroundImage = "background_city"
+  } else {
+    var backgroundImage = "background_cute"
+  }
+
+  const glitch = useGlitch();
+
+  const handleClick = async () => {
+    play();
+
+    setPlaying(true);
+    await new Promise((resolve) => setTimeout(resolve, 1600));
+    setStartRain(true);
+
+    await new Promise((resolve) => setTimeout(resolve, 2650));
+    setHideButton(false);
+
+    await new Promise((resolve) => setTimeout(resolve, 2650));
+    setHideName(false);
+
+    await new Promise((resolve) => setTimeout(resolve, 2650));
+    sethideTheme(false);
+
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    startDisrupt(true);
+
+    setScrollDisabled(true);
+  };
 
   return (
     <>
-	
-      <div className="fixed top-50 left-5 p-4 flex items-center justify-center h-10 w-10 bg-red-500">
-        <button  onClick={async () => {
-			setScrollDisabled(false); //enable scrolling
-		}}>
-		
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="w-6 h-6"
-          >
-            <path d="M13.5 4.06c0-1.336-1.616-2.005-2.56-1.06l-4.5 4.5H4.508c-1.141 0-2.318.664-2.66 1.905A9.76 9.76 0 001.5 12c0 .898.121 1.768.35 2.595.341 1.24 1.518 1.905 2.659 1.905h1.93l4.5 4.5c.945.945 2.561.276 2.561-1.06V4.06zM17.78 9.22a.75.75 0 10-1.06 1.06L18.44 12l-1.72 1.72a.75.75 0 001.06 1.06l1.72-1.72 1.72 1.72a.75.75 0 101.06-1.06L20.56 12l1.72-1.72a.75.75 0 00-1.06-1.06l-1.72 1.72-1.72-1.72z" />
-          </svg>
-        </button>
-      </div>
       <div
-        className={`min-h-screen transition-colors duration-500 ${
-          darkMode ? "bg-dark-background text-white" : "bg-white text-black"
-        }`}
-      >
-        <header className="container mx-auto mb-0 flex justify-center items-center">
-          <div className="logo">
-            <Image
-              src="/hd_logo.jpeg"
-              width={500}
-              height={500}
-              alt="hackathon logo"
-            />
-          </div>
-        </header>
-        <main className="container mx-auto -mt-8 px-[22px]">
-          <div className="text-center">
-            <h1 className="date">10.22.2023</h1>
-          </div>
-          <Grid pages={pages} />
-        </main>
-        <a
-          id="mlh-trust-badge"
-          className="block fixed right-12 top-0 w-20 z-40"
-          href="https://mlh.io/na?utm_source=na-hackathon&amp;utm_medium=TrustBadge&amp;utm_campaign=2023-season&amp;utm_content=black"
-          target="_blank"
-          rel="noopener noreferrer"
+        className={backgroundImage}
+        ref={backgroundRef}
+        style={{
+          zIndex: bgZIndex,
+          transform: `scale(${bgImageScale})`,
+          transition: "transform 0.5s ease",
+        }}
+      />
+
+      {startRain && (
+        <div
+          className="rain-layer"
+          style={{
+            zIndex: rainZIndex,
+          }}
         >
-          <img
-            src="https://s3.amazonaws.com/logged-assets/trust-badge/2023/mlh-trust-badge-2023-black.svg"
-            alt="Major League Hacking 2023 Hackathon Season"
-            className="w-full"
-          />
-        </a>
-      </div>
+          <Rain />
+        </div>
+      )}
+
+      <main className="flex min-h-screen flex-col items-center p-24 main-container">
+        {disrupt && (<button onClick={() => {
+          if (playing) {
+            pause();
+            setPlaying(false);
+          }
+          else {
+            play();
+            setPlaying(true);
+          }
+        }}>
+          <MuteButton />
+        </button>)}
+        {disrupt && (<MLH_Trust />)}
+
+        {hideName && (
+          <h1 className={`mt-36 text-center ${disrupt ? 'font-RubikGlitch text-7xl sm:text-8xl md:text-9xl' : 'font-Chalkduster text-7xl sm:text-8xl'}`}>Hack Dearborn2</h1>
+        )}
+        {!hideName && (
+          <h1 className="d3">Hack Dearborn2</h1>
+        )}
+
+        <div className="relative">
+          {!hideTheme && <h3 className="d4">Disrupt Reality</h3>}
+
+          <div className="flex justify-center gap-4">
+            {disrupt && (
+              <button
+                className="py-4 text-xl text-white bg-gray-800 px-7 hover:bg-gray-700"
+                onClick={async () => {
+                  stop();
+                  setStartRain(false);
+                  startDisrupt(false);
+                  setScrollDisabled(false);
+                }}
+              >
+                Back to Reality
+              </button>
+            )}
+          </div>
+          {hideTheme && !disrupt && (
+            <h5 className="font-Papyrus text-5xl sm:text-7xl">10.22.2023</h5>
+          )}
+        </div>
+
+
+
+        {disrupt && (<div className="down-arrow"></div>)}
+
+        {!disrupt && hideButton && <div><button
+          onClick={handleClick}
+          ref={glitch.ref}
+        >
+          <Disrupt_Reality_Button />
+
+        </button></div>}
+
+        {/* {disrupt && <NavBar pages={pages} />} */}
+
+        {/* <div style={{ minHeight: "100vh" }}></div>
+        <div className="laptop-wrapper">
+          <div className="laptop-container">
+            <Image src={laptopSvg} alt="Laptop" />
+          </div>
+        </div> */}
+
+        <About />
+
+        <Prizes />
+
+        <Sponsors />
+      </main>
     </>
   );
-};
-
-export default Home;
+}
