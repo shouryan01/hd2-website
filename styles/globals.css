@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "./prizes";
+@import "./sponsors";
+
 @font-face {
   font-family: "cynatar";
   src: url("../public/static/fonts/Cynatar.otf") format("opentype");
@@ -224,7 +227,7 @@ body {
 }
 
 .cta:hover {
-  transition: 0.5s;
+  transition: 0.2s;
   box-shadow: 10px 10px 0 #007aff;
 }
 
