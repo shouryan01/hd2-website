@@ -227,7 +227,7 @@ body {
 }
 
 .cta:hover {
-  transition: 0.5s;
+  transition: 0.2s;
   box-shadow: 10px 10px 0 #007aff;
 }
 

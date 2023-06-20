@@ -101,7 +101,7 @@ const Prizes = () => {
 
 	return (
 		<div className="my-5 w-full px-5 md:my-10 md:px-10 lg:my-20 lg:px-20">
-			<h1 className="mb-4 px-5 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:px-20 lg:text-6xl">
+			<h1 className="mb-4 px-5 text-4xl text-center font-extrabold leading-none tracking-tight md:text-5xl lg:px-20 lg:text-6xl">
 				Prizes
 			</h1>
 			<div className="bubble-container">
@@ -124,9 +124,8 @@ const Prizes = () => {
 									animationDuration: `${300 / prizeTimers[i]}s`,
 									left: `${prizePositions[i]}%`,
 								}}
-								className={`bubble prize-bubble ${
-									hoverIndex !== null && hoverIndex !== i ? "blur" : ""
-								}`}
+								className={`bubble prize-bubble ${hoverIndex !== null && hoverIndex !== i ? "blur" : ""
+									}`}
 								onMouseEnter={() => setHoverIndex(i)}
 								onMouseLeave={() => setHoverIndex(null)}
 							>
@@ -136,9 +135,8 @@ const Prizes = () => {
 									className="h-20 w-20 object-contain md:h-40 md:w-40 lg:h-60 lg:w-60"
 								/>
 								<div
-									className={`${
-										hoverIndex === i ? "visible" : "invisible"
-									} absolute inset-0 flex items-center justify-center`}
+									className={`${hoverIndex === i ? "visible" : "invisible"
+										} absolute inset-0 flex items-center justify-center`}
 								>
 									<div className="bg-black bg-opacity-10 p-2 backdrop-blur">
 										<p className="text-center text-sm font-bold text-white md:text-lg lg:text-2xl">

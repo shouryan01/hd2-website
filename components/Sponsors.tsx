@@ -164,9 +164,8 @@ const SponsorsContainer = ({
 			</div>
 			{Boolean(numLastRow) && (
 				<div
-					className={`${
-						sponsors.length > numLastRow && "mt-2"
-					} flex justify-center lg:space-x-2`}
+					className={`${sponsors.length > numLastRow && "mt-2"
+						} flex justify-center lg:space-x-2`}
 				>
 					{sponsors.slice(-numLastRow).map((sponsor, index) => (
 						<div className={`w-full ${tierMaps.flex[tier]}`}>
@@ -184,7 +183,7 @@ const Sponsors = () => {
 
 	return (
 		<div className="w-full px-10 pt-20 md:px-20 lg:px-40 lg:pb-20">
-			<h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl">
+			<h1 className="mb-4 text-center text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl">
 				Sponsors
 			</h1>
 			<div className="mb-4 grid grid-cols-1 gap-2">
