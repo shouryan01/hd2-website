@@ -6,6 +6,7 @@ import { Events } from "react-scroll";
 import Image from "next/image";
 import MLH_Trust from "../components/MLH_Trust";
 import MuteButton from "@/components/Mute_Button";
+import OurTeam from "@/components/ourteam";
 import Prizes from "@/components/Prizes";
 import Sponsors from "@/components/Sponsors";
 import dynamic from "next/dynamic";
@@ -112,11 +113,11 @@ export default function Home() {
       <div
         className={backgroundImage}
         ref={backgroundRef}
-        style={{
-          zIndex: bgZIndex,
-          transform: `scale(${bgImageScale})`,
-          transition: "transform 0.5s ease",
-        }}
+      // style={{
+      //   zIndex: bgZIndex,
+      //   transform: `scale(${bgImageScale})`,
+      //   transition: "transform 0.5s ease",
+      // }}
       />
 
       {startRain && (
@@ -187,20 +188,13 @@ export default function Home() {
 
         </button></div>}
 
-        {/* {disrupt && <NavBar pages={pages} />} */}
-
-        {/* <div style={{ minHeight: "100vh" }}></div>
-        <div className="laptop-wrapper">
-          <div className="laptop-container">
-            <Image src={laptopSvg} alt="Laptop" />
-          </div>
-        </div> */}
-
         <About />
 
         <Prizes />
 
         <Sponsors />
+
+        <OurTeam />
       </main>
     </>
   );

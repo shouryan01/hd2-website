@@ -17,10 +17,13 @@ const About = () => {
             />
           </div>
           <div className="w-full md:w-1/2 lg:w-2/3">
-            <p className="text-2xl text-left mb-2 font-bold">
+            <p className="text-2xl text-left mb-2 font-bold ml-8">
               What is Hack Dearborn?
             </p>
-            Hack Dearborn is an upcoming annual hackathon in southeast Michigan. Hack Dearborn will be hosted at the University of Michigan Dearborn by the Google Developer Student Clubs chapter at the University. Hack Dearborn aims to provide students with a creative space to solve problems and create real world solutions using technology.
+            <p className='ml-8'>
+              Hack Dearborn is an upcoming annual hackathon in southeast Michigan. Hack Dearborn will be hosted at the University of Michigan Dearborn by the Google Developer Student Clubs chapter at the University. Hack Dearborn aims to provide students with a creative space to solve problems and create real world solutions using technology.
+            </p>
+
           </div>
         </div>
       </div>
