@@ -7,7 +7,7 @@ import Image from "next/image";
 import MLH_Trust from "../components/MLH_Trust";
 import MuteButton from "@/components/Mute_Button";
 import Prizes from "@/components/Prizes";
-import Sponsors from "@/components/sponsors";
+import Sponsors from "@/components/Sponsors";
 import dynamic from "next/dynamic";
 import laptopSvg from "../public/static/images/laptop.svg";
 import { useGlitch } from 'react-powerglitch'
@@ -31,7 +31,7 @@ export default function Home() {
   const [play, { stop, pause }] = useSound('/static/sounds/cyberpunk_cut.mp3');
   const [startRain, setStartRain] = useState(false);
 
-  const [disrupt, startDisrupt] = useState(false);
+  const [disrupt, startDisrupt] = useState(true);
   const [scrollDisabled, setScrollDisabled] = useState(true);
 
   useEffect(() => {
@@ -189,18 +189,18 @@ export default function Home() {
 
         {/* {disrupt && <NavBar pages={pages} />} */}
 
-        <div style={{ minHeight: "100vh" }}></div>
+        {/* <div style={{ minHeight: "100vh" }}></div>
         <div className="laptop-wrapper">
           <div className="laptop-container">
             <Image src={laptopSvg} alt="Laptop" />
           </div>
-        </div>
+        </div> */}
+
+        <About />
 
         <Prizes />
 
         <Sponsors />
-        
-        <About />
       </main>
     </>
   );

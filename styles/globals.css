@@ -1,9 +1,10 @@
+@import "./prizes";
+@import "./sponsors";
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import "./prizes";
-@import "./sponsors";
 
 @font-face {
   font-family: "cynatar";
@@ -207,8 +208,6 @@ body {
     transform: translateY(-2px) translateX(2px);
   }
 }
-
-@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
 
 .cta {
   display: flex;

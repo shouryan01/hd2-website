@@ -101,7 +101,7 @@ const Prizes = () => {
 
 	return (
 		<div className="my-5 w-full px-5 md:my-10 md:px-10 lg:my-20 lg:px-20">
-			<h1 className="mb-4 px-5 text-4xl text-center font-extrabold leading-none tracking-tight md:text-5xl lg:px-20 lg:text-6xl">
+			<h1 className="mb-4 px-5 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:px-20 lg:text-6xl">
 				Prizes
 			</h1>
 			<div className="bubble-container">

@@ -4,10 +4,13 @@ const About = () => {
   return (
     <div>
       <div className="container mx-auto p-4">
+        <h1 className="mb-4 px-5 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:px-20 lg:text-6xl">
+          About
+        </h1>
         <div className="flex flex-wrap justify-start items-center">
           <div className="w-full md:w-1/2 lg:w-1/3">
             <Image
-              src="/hd_logo.jpeg"
+              src="/HD2_logo.jpg"
               width={500}
               height={500}
               alt="hackathon logo"
