@@ -1,7 +1,7 @@
 import Gallery from "@/components/Gallery";
 import React from "react";
 
-const ourTeam = () => {
+const OurTeam = () => {
   const images = [
     { url: "/ShamsAhson.jpg", name: "Shams Ahson", link: "https://www.linkedin.com/in/shams-ahson-6453ab210/" },
     { url: "/HudaHussaini.jpg", name: "Huda Hussaini", link: "https://www.linkedin.com/in/hussainihuda/" },
@@ -26,7 +26,7 @@ const ourTeam = () => {
 
   return (
     <div className="items-center justify-center">
-      <h1 className="text-3xl font-bold text-center my-8">
+      <h1 className="mb-4 px-5 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:px-20 lg:text-6xl">
         Meet Our Team
       </h1>
       <Gallery images={images} />
@@ -34,4 +34,4 @@ const ourTeam = () => {
   );
 }
 
-export default ourTeam;
+export default OurTeam;
