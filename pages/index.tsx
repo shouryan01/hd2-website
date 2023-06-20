@@ -3,18 +3,17 @@ import React, { useEffect, useRef, useState } from "react";
 import About from "@/components/About";
 import Disrupt_Reality_Button from "@/components/Disrupt_Reality_Button";
 import { Events } from "react-scroll";
-import Image from "next/image";
+import Faq from "@/components/Faq";
 import MLH_Trust from "../components/MLH_Trust";
 import MuteButton from "@/components/Mute_Button";
 import OurTeam from "@/components/ourteam";
 import Prizes from "@/components/Prizes";
 import Sponsors from "@/components/Sponsors";
 import dynamic from "next/dynamic";
-import laptopSvg from "../public/static/images/laptop.svg";
 import { useGlitch } from 'react-powerglitch'
 import useSound from 'use-sound';
 
-const Rain = dynamic(() => import("../components/Rain"), { ssr: false });
+const Rain = dynamic(() => import("../components/rain"), { ssr: false });
 const NavBar = dynamic(() => import("../components/NavBar"), { ssr: true });
 
 export default function Home() {
@@ -193,6 +192,8 @@ export default function Home() {
         <Prizes />
 
         <Sponsors />
+
+        <Faq />
 
         <OurTeam />
       </main>
