@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
+import About from "@/components/About";
 import Disrupt_Reality_Button from "@/components/Disrupt_Reality_Button";
 import { Events } from "react-scroll";
 import Image from "next/image";
@@ -198,6 +199,8 @@ export default function Home() {
         <Prizes />
 
         <Sponsors />
+        
+        <About />
       </main>
     </>
   );
