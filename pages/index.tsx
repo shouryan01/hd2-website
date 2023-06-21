@@ -1,3 +1,4 @@
+import { Parallax, ParallaxBanner, ParallaxBannerLayer, ParallaxProvider, useParallax } from 'react-scroll-parallax';
 import React, { useEffect, useRef, useState } from "react";
 
 import About from "@/components/About";
@@ -8,7 +9,6 @@ import Faq from "@/components/Faq";
 import MLH_Trust from "../components/MLH_Trust";
 import MuteButton from "@/components/Mute_Button";
 import OurTeam from "@/components/ourteam";
-import Plx from "react-plx";
 import Prizes from "@/components/Prizes";
 import Sponsors from "@/components/Sponsors";
 import dynamic from "next/dynamic";
@@ -110,106 +110,57 @@ export default function Home() {
   };
 
   return (
-    <>
-      <div>
-        <Plx
-          parallaxData={[
-            {
-              start: 0,
-              end: 700,
-              properties: [
-                {
-                  startValue: 1,
-                  endValue: 1.6,
-                  property: "scale"
-                }
-              ]
-            }
-          ]}
-          style={{
-            position: "fixed",
-            left: 0,
-            top: 0,
-            width: "100%",
-            zIndex: 100
-          }}
-        >
-          <img style={{ width: "100%" }} src="bg.png" alt="foreground" />
-        </Plx>
-        <Plx
-          parallaxData={[
-            {
-              start: 0,
-              end: 800,
-              properties: [
-                {
-                  startValue: 1,
-                  endValue: 1.18,
-                  property: "scale"
-                }
-              ]
-            }
-          ]}
-          style={{
-            position: "fixed",
-            left: 0,
-            top: 0,
-            width: "100%"
-          }}
-        >
-          <img style={{ width: "100%" }} src="background.jpg" alt="background" />
-        </Plx>
-        <Plx
-          parallaxData={[
-            {
-              start: 0,
-              end: 400,
-              properties: [
-                {
-                  startValue: 1,
-                  endValue: 0,
-                  property: "opacity"
-                }
-              ]
-            }
-          ]}
-          style={{
-            position: "fixed",
-            left: 0,
-            top: "26vw",
-            width: "100%"
-          }}
-        >
-          <img
-            style={{
-              width: "30vw"
-            }}
-            src="/text-img.webp"
-            alt="Goonies"
-          />
-        </Plx>
-        <div
-          style={{
-            position: "fixed",
-            left: 0,
-            top: 0,
-            zIndex: 200,
-            paddingTop: "56%",
-            height: "400vh",
-            width: "100%"
-          }}
-        >
-          <div
-            style={{
-              background: "#000",
-              height: "100%"
-            }}
-          ></div>
-        </div>
+    // <About />
+    //         <Prizes />
+    //         <Sponsors />
+    //         <Faq />
+    //         <Contact />
+    //         <OurTeam />
+    <div className="flex min-h-screen flex-col items-center p-24 main-container">
+      {/* <RSP pages={6}>
+        <ParallaxLayer offset={0} factor={2}>
+          hi
+        </ParallaxLayer>
+        <ParallaxLayer offset={1} speed={0.8} sticky={{ start: 1.5, end: 2.5 }}>
+          <About />
+        </ParallaxLayer>
+      </RSP> */}
+      <ParallaxProvider>
+        <Parallax scale={[0.5, 1]} className='h-screen'>
+          <About />
+        </Parallax>
+        {/* 
+        <Parallax scale={[0.5, 1.5]} className='h-screen'>
+          <Prizes />
+        </Parallax>
+        <Parallax scale={[0.5, 1.5]} className='mb-48'>
+          <Sponsors />
+        </Parallax> */}
+        <Parallax scale={[0.5, 1.5]} className='h-screen'>
+          <Faq />
+        </Parallax>
+        <Parallax scale={[0.5, 1.5]} className='h-screen'>
+          <Contact />
+        </Parallax>
+        {/* 
+        <Parallax scale={[0.5, 1]} className='h-screen'>
+          <OurTeam />
+        </Parallax> */}
 
-        {/* <Sponsors /> */}
-      </div>
-    </>
+        {/* <Parallax scale={[0.5, 1]}>
+          <Sponsors />
+        </Parallax>
+        <Parallax scale={[0.5, 1]}>
+          <Faq />
+        </Parallax> */}
+
+      </ParallaxProvider>
+
+      <button>
+        <Disrupt_Reality_Button />
+      </button>
+
+    </div >
     // <>
     //   <div
     //     className={backgroundImage}

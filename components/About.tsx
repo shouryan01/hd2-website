@@ -10,7 +10,7 @@ const About = () => {
         <div className="flex flex-wrap justify-start items-center">
           <div className="w-full md:w-1/2 lg:w-1/3">
             <Image
-              src="/HD2_logo.jpg"
+              src="/HD2_logo_transparent.png"
               width={500}
               height={500}
               alt="hackathon logo"
