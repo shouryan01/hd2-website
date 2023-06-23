@@ -9,13 +9,13 @@ type ImageType = {
 
 const Gallery = ({ images }: any) => {
   return (
-    <div className="grid grid-cols-5 gap-4">
+    <div className="grid grid-cols-4 gap-1 md:grid-cols-5 md:gap-4">
       {images.map((image: ImageType, index: number) => (
         <div key={index} className="text-center">
           <img
             src={image.url}
             alt={image.name}
-            style={{ width: "100%", height: "20vw" }}
+            style={{ width: "20vw", height: "18vw" }}
             className="rounded-xl"
           />
           <p>{image.name}</p>

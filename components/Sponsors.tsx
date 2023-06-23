@@ -120,6 +120,7 @@ const SponsorContent = ({ sponsor }: { sponsor: Sponsor }) => {
 					src={isHovered && hoverLogo ? hoverLogo : logo}
 					alt={name}
 					className="object-contain duration-200 group-hover:scale-110"
+
 				/>
 			</div>
 		</a>

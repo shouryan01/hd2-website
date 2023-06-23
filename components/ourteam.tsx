@@ -25,8 +25,8 @@ const OurTeam = () => {
   ]
 
   return (
-    <div className="items-center justify-center">
-      <h1 className="mb-4 px-5 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:px-20 lg:text-6xl">
+    <div className="container mx-auto h-screen">
+      <h1 className="font-extrabold leading-none tracking-tight text-4xl md:text-5xl lg:text-6xl pb-5 md:pb-10">
         Meet Our Team
       </h1>
       <Gallery images={images} />
