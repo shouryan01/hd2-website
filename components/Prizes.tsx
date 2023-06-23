@@ -104,6 +104,8 @@ const Prizes = () => {
 			<h1 className="font-extrabold leading-none tracking-tight text-4xl md:text-5xl lg:text-6xl">
 				Prizes
 			</h1>
+			<h5 className="hidden lg:block">(Hover over a bubble to learn more!)</h5>
+			<h5 className="block lg:hidden">(Tap a bubble to learn more!)</h5>
 			<div className="bubble-container">
 				{bubbleTimers.map((t, i) => (
 					<span
