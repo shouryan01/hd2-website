@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@react-three/fiber": "^8.12.1",
+    "@typeform/embed": "^2.13.0",
     "@typeform/embed-react": "^2.24.0",
     "@types/three": "^0.150.2",
     "framer-motion": "^10.12.4",
@@ -24,7 +25,8 @@
     "react-plx": "^2.1.2",
     "react-powerglitch": "^1.0.0",
     "react-scroll": "^1.8.9",
-    "tailwindcss": "latest"
+    "tailwindcss": "latest",
+    "typeform-embed-monorepo": "typeform/embed"
   },
   "devDependencies": {
     "@types/node": "18.15.11",
