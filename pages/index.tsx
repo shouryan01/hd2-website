@@ -154,19 +154,10 @@ export default function Home() {
 
       </ParallaxProvider> */}
 
-      {/* <SliderButton
-        id={"oNcQNjvg"}
-        width={5000}
-      >
-        <Disrupt_Reality_Button />
-      </SliderButton> */}
       <Logo />
-
-
       <Cover />
       <Mobile_Cover />
 
-      {/* <Apply_Button /> */}
       <About />
       <Tracks />
       <Sponsors />
@@ -175,96 +166,5 @@ export default function Home() {
       <Contact />
       <OurTeam />
     </div >
-    // <>
-    //   <div
-    //     className={backgroundImage}
-    //     ref={backgroundRef}
-    //   // style={{
-    //   //   zIndex: bgZIndex,
-    //   //   transform: `scale(${bgImageScale})`,
-    //   //   transition: "transform 0.5s ease",
-    //   // }}
-    //   />
-
-    //   {startRain && (
-    //     <div
-    //       className="rain-layer"
-    //       style={{
-    //         zIndex: rainZIndex,
-    //       }}
-    //     >
-    //       <Rain />
-    //     </div>
-    //   )}
-
-    //   <main className="flex min-h-screen flex-col items-center p-24 main-container">
-    //     {disrupt && (<button onClick={() => {
-    //       if (playing) {
-    //         pause();
-    //         setPlaying(false);
-    //       }
-    //       else {
-    //         play();
-    //         setPlaying(true);
-    //       }
-    //     }}>
-    //       <MuteButton />
-    //     </button>)}
-    //     {disrupt && (<MLH_Trust />)}
-
-    //     {hideName && (
-    //       <h1 className={`mt-36 text-center ${disrupt ? 'font-RubikGlitch text-7xl sm:text-8xl md:text-9xl' : 'font-Chalkduster text-7xl sm:text-8xl'}`}>Hack Dearborn2</h1>
-    //     )}
-    //     {!hideName && (
-    //       <h1 className="d3">Hack Dearborn2</h1>
-    //     )}
-
-    //     <div className="relative">
-    //       {!hideTheme && <h3 className="d4">Disrupt Reality</h3>}
-
-    //       <div className="flex justify-center gap-4">
-    //         {disrupt && (
-    //           <button
-    //             className="py-4 text-xl text-white bg-gray-800 px-7 hover:bg-gray-700"
-    //             onClick={async () => {
-    //               stop();
-    //               setStartRain(false);
-    //               startDisrupt(false);
-    //               setScrollDisabled(false);
-    //             }}
-    //           >
-    //             Back to Reality
-    //           </button>
-    //         )}
-    //       </div>
-    //       {hideTheme && !disrupt && (
-    //         <h5 className="font-Papyrus text-5xl sm:text-7xl">10.22.2023</h5>
-    //       )}
-    //     </div>
-
-
-
-    //     {disrupt && (<div className="down-arrow"></div>)}
-
-    //     {!disrupt && hideButton && <div><button
-    //       onClick={handleClick}
-    //       ref={glitch.ref}
-    //     >
-    //       <Disrupt_Reality_Button />
-
-    //     </button></div>}
-
-    //     {disrupt && (
-    //       <>
-    //         <About />
-    //         <Prizes />
-    //         <Sponsors />
-    //         <Faq />
-    //         <Contact />
-    //         <OurTeam />
-    //       </>
-    //     )}
-    //   </main>
-    // </>
   );
 }
