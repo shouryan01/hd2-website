@@ -7,7 +7,7 @@ const Contact = () => {
                 <h1 className="mb-4 font-extrabold leading-none tracking-tight text-4xl md:text-5xl lg:text-6xl pb-5 md:pb-10">
                     Contact
                 </h1>
-                <div className="md:text-center">
+                <div className="text-left">
                     <ul className="font-semi-bold flex flex-col space-y-4">
                         <ContactLink href="mailto:info@hackdearborn.org" title="email" icon=" info@hackdearborn.org" />
                         <ContactLink

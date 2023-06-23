@@ -25,7 +25,7 @@ const tracks = [
 
 const Tracks = () => {
     return (
-        <div className="container mx-auto mb-56">
+        <div className="container mx-auto mb-80">
             <h1 className="font-extrabold leading-none tracking-tight text-4xl md:text-5xl lg:text-6xl pb-5 md:pb-10">
                 Tracks
             </h1>

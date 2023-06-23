@@ -12,7 +12,7 @@ function Apply_Button({ glitch }: Props) {
                 id={"oNcQNjvg"}
                 width={5000}
             >
-                <div className="cta text-5xl">
+                <div className="cta text-3xl lg:text-5xl">
                     <span className="font-Copperplate">Apply</span>
                     <span>
                         <svg width="1.1em" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">

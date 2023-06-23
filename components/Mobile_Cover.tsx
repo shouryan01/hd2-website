@@ -26,7 +26,7 @@ export default function Mobile_Cover() {
                 ]}
                 style={{
                     position: "fixed",
-                    left: -280,
+                    left: -300,
                     top: 0,
                     width: "300%",
                     zIndex: 100,
@@ -88,7 +88,7 @@ export default function Mobile_Cover() {
                     width: "100%"
                 }}
             >
-                <h1 className="d3">
+                <h1 className="d32">
                     <ApplyGlitch>
                         Hack <br />Dearborn <br />2
                     </ApplyGlitch>

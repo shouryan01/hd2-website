@@ -1,5 +1,4 @@
 import ApplyGlitch from "@/components/ApplyGlitch";
-import Apply_Button from "@/components/Apply_Button";
 import Plx from "react-plx";
 
 export default function Cover() {
@@ -60,7 +59,7 @@ export default function Cover() {
                     width: "100%",
                 }}
             >
-                <img style={{ width: "fit", overflow: "clip" }} src="background.jpg" alt="background" />
+                <img style={{ width: "fit" }} src="background.jpg" alt="background" />
             </Plx>
             <Plx
                 parallaxData={[

@@ -1,3 +1,4 @@
+import Apply_Button from "./Apply_Button";
 import React from "react";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -61,11 +62,11 @@ const Faq = () => {
     }
 
     return (
-        <div className="w-full px-10 pt-20 md:px-20 lg:px-40 lg:pb-20 mb-40">
-            <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl">
+        <div className="container mx-auto h-screen text-center mt-96">
+            <h1 className="text-left mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl">
                 FAQ
             </h1>
-            <div className="faq-grid grid grid-cols-2 gap-8">
+            <div className="faq-grid grid grid-cols-2 gap-8 mb-32">
                 <div>
                     {faqItems.slice(0, Math.ceil(faqItems.length / 2)).map((item, index) => (
                         <motion.div
@@ -123,6 +124,7 @@ const Faq = () => {
                     ))}
                 </div>
             </div>
+            <Apply_Button glitch={true} />
         </div>
     );
 };

@@ -4,6 +4,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "~react-horizontal-vertical/dist/index.umd.css";
 
 @font-face {
   font-family: "cynatar";
@@ -43,9 +44,6 @@ body {
     /* height: 1000vh; */
 }
 
-
-
-
 .normal {
   margin: 0.5em 0;
   color: #fff;
@@ -58,6 +56,17 @@ body {
 .d3 {
   font-family: "Rubik Glitch", sans-serif;
   font-size: calc(1rem + 4.5vw);
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-shadow: -0.09em 0 0 #ff66c4, 0.09em 0 0 #007aff;
+  margin-top: calc(10rem + 5vw);
+  z-index: 50;
+}
+.d32 {
+  font-family: "Rubik Glitch", sans-serif;
+  font-size: calc(13vw);
   color: #fff;
   text-align: center;
   text-transform: uppercase;
