@@ -1,4 +1,4 @@
-import Apply_Button from "./Apply_Button";
+import Apply_Button from "@/components/Apply_Button";
 import React from "react";
 import { motion } from "framer-motion";
 import { useState } from "react";

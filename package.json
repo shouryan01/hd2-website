@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "@react-three/fiber": "^8.12.1",
+    "@typeform/embed-react": "^2.24.0",
     "@types/three": "^0.150.2",
     "framer-motion": "^10.12.4",
-    "install": "^0.13.0",
     "next": "13.3.0",
     "p5": "^1.6.0",
     "postcss": "latest",
@@ -21,15 +21,9 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-horizontal-vertical": "^1.0.4",
-    "react-plx": "^2.1.2",
     "react-powerglitch": "^1.0.0",
     "react-scroll": "^1.8.9",
-    "react-scroll-parallax": "^3.4.2",
-    "react-spring": "^9.7.1",
-    "react-use-scroll-snap": "^0.0.4",
-    "scroll-snap": "^4.0.3",
-    "tailwindcss": "latest",
-    "use-sound": "^4.0.1"
+    "tailwindcss": "latest"
   },
   "devDependencies": {
     "@types/node": "18.15.11",
