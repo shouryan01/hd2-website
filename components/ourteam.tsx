@@ -5,7 +5,7 @@ const OurTeam = () => {
   const images = [
     { url: "/ShamsAhson.jpg", name: "Shams Ahson", link: "https://www.linkedin.com/in/shams-ahson-6453ab210/" },
     { url: "/HudaHussaini.jpg", name: "Huda Hussaini", link: "https://www.linkedin.com/in/hussainihuda/" },
-    { url: "/FaithlonG.jpg", name: "Faith Long", link: "https://www.linkedin.com/in/faith-long-40963b168/" },
+    { url: "/FaithLong.jpg", name: "Faith Long", link: "https://www.linkedin.com/in/faith-long-40963b168/" },
     { url: "/EejoyLim.jpg", name: "Eejoy Lim", link: "https://www.linkedin.com/in/eejoylim/" },
     { url: "/shouryanNikam.jpeg", name: "Shouryan Nikam", link: "https://www.linkedin.com/in/shouryannikam/" },
     { url: "/RohitNair.jpg", name: "Rohit Nair", link: "https://www.linkedin.com/in/r-s-nair/" },
