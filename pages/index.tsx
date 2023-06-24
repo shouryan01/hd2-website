@@ -13,7 +13,7 @@ import Tracks from '@/components/Tracks';
 
 export default function Home() {
   return (
-    <Rhv>
+    <Rhv thresholdCount={400}>
       <div className="flex min-h-screen flex-col items-center main-container">
         <First_Container />
         <About />
