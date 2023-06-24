@@ -24,8 +24,7 @@
     "react-plx": "^2.1.2",
     "react-powerglitch": "^1.0.0",
     "react-scroll": "^1.8.9",
-    "tailwindcss": "latest",
-    "typeform-embed-monorepo": "typeform/embed"
+    "tailwindcss": "latest"
   },
   "devDependencies": {
     "@types/node": "18.15.11",
