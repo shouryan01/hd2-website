@@ -29,7 +29,7 @@ const Tracks = () => {
             <h1 className="font-extrabold leading-none tracking-tight text-4xl md:text-5xl lg:text-6xl pb-5 md:pb-10">
                 Tracks
             </h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4">
                 {tracks.map((track, index) => (
                     <Track key={index} title={track.title} description={track.description} image={track.image} />
                 ))}

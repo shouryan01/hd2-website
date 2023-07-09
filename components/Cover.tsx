@@ -1,4 +1,5 @@
 import ApplyGlitch from "@/components/ApplyGlitch";
+import Apply_Button from "@/components/Apply_Button";
 import Plx from "react-plx";
 
 export default function Cover() {
@@ -28,11 +29,12 @@ export default function Cover() {
                     left: 0,
                     top: 0,
                     width: "100%",
-                    zIndex: 100,
+                    zIndex: 20,
                 }}
             >
-                <img style={{ width: "100%", height: "50%" }} src="bg.png" alt="foreground" />
+                <img style={{ width: "100%", height: "50%", zIndex: 2 }} src="bg.png" alt="foreground" />
             </Plx>
+
             <Plx
                 parallaxData={[
                     {
@@ -57,6 +59,7 @@ export default function Cover() {
                     left: 0,
                     top: 0,
                     width: "100%",
+                    zIndex: 10,
                 }}
             >
                 <img style={{ width: "fit" }} src="background.jpg" alt="background" />
@@ -84,14 +87,21 @@ export default function Cover() {
                     position: "fixed",
                     left: 0,
                     top: 0,
-                    width: "100%"
+                    width: "100%",
+                    zIndex: 30,
                 }}
             >
                 <h1 className="d3">
                     <ApplyGlitch>
-                        Hack <br />Dearborn <br />2
+                        Hack <br />Dearborn
                     </ApplyGlitch>
+
+                    <div className="mr-10">
+                        <Apply_Button glitch={false} />
+                    </div>
                 </h1>
+
+                <div className="arrow bounce mt-56"></div>
             </Plx>
         </div >
     );

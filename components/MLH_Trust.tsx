@@ -8,11 +8,12 @@ function MLH_Trust() {
             rel="noopener noreferrer"
         >
             <img
-                src="https://s3.amazonaws.com/logged-assets/trust-badge/2023/mlh-trust-badge-2023-black.svg"
+                src="https://s3.amazonaws.com/logged-assets/trust-badge/2024/mlh-trust-badge-2024-black.svg"
                 alt="Major League Hacking 2023 Hackathon Season"
                 className="w-full"
             />
         </a>
+
     )
 };
 

@@ -49,11 +49,12 @@ module.exports = {
 				Copperplate: ["Copperplate", "fantasy"],
 				RubikGlitch: ["Rubik Glitch", "sans-serif"],
 				cynatar: ["cynatar", "sans-serif"],
+				abang: ["abang", "sans-serif"],
 			},
 		},
 	},
 	variants: {
 		extend: {},
 	},
-	plugins: [],
+	plugins: [require("daisyui")],
 };

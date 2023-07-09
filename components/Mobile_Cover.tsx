@@ -29,7 +29,7 @@ export default function Mobile_Cover() {
                     left: -300,
                     top: 0,
                     width: "300%",
-                    zIndex: 100,
+                    zIndex: 20,
                 }}
             >
                 <img src="bg.png" alt="foreground" />
@@ -57,7 +57,8 @@ export default function Mobile_Cover() {
                     position: "absolute",
                     left: 0,
                     top: 0,
-                    width: "100%"
+                    width: "100%",
+                    zIndex: 10,
                 }}
                 className="background_city_mobile"
             >
@@ -85,15 +86,21 @@ export default function Mobile_Cover() {
                     position: "fixed",
                     left: 0,
                     top: 0,
-                    width: "100%"
+                    width: "100%",
+                    zIndex: 30,
                 }}
             >
                 <h1 className="d32">
                     <ApplyGlitch>
-                        Hack <br />Dearborn <br />2
+                        Hack <br />Dearborn
                     </ApplyGlitch>
+                    <Apply_Button glitch={false} />
                 </h1>
+                <div className="arrow bounce mt-56"></div>
             </Plx>
+            <div className="text-center">
+
+            </div>
         </div >
     );
 }
