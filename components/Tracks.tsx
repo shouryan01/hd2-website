@@ -4,22 +4,22 @@ const tracks = [
     {
         title: 'Automotive Future',
         description: 'Create a solution to a futuristic automotive issue: self-driving vehicles, smart mobility, and connectivity.',
-        image: '/car.png',
+        image: '/car1.png',
     },
     {
         title: 'Financial Inclusion',
         description: 'Hackers will address the issue of inequitable access to financial services. Topics include: financial literacy, consumer protection, inclusivity and affordability.',
-        image: '/finance.png',
+        image: '/finance1.png',
     },
     {
         title: 'Education',
         description: 'Hackers will create a project that they think improves education. Possible issues are the digital divide, learning inequalities, and much more.',
-        image: '/education.png',
+        image: '/edu1.png',
     },
     {
         title: 'Health and Wellness',
         description: 'To address issues such as healthy food consumption and mental health, hackers will develop digital solutions.',
-        image: '/health.png',
+        image: '/health1.png',
     },
 ];
 

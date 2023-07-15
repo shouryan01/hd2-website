@@ -20,6 +20,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "anka";
+  src: url("../public/static/fonts/AnkaCoder-r.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;

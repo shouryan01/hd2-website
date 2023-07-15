@@ -50,6 +50,7 @@ module.exports = {
 				RubikGlitch: ["Rubik Glitch", "sans-serif"],
 				cynatar: ["cynatar", "sans-serif"],
 				abang: ["abang", "sans-serif"],
+				anka: ["anka", "sans-serif"],
 			},
 		},
 	},

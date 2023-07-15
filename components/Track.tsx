@@ -6,16 +6,16 @@ type TrackProps = {
 
 export default function Track({ title, description, image }: TrackProps) {
     return (
-        <div className="flex flex-wrap justify-start items-center">
+        <div className="flex flex-wrap justify-start items-center mt-14">
             <div className="w-full md:w-1/2 lg:w-1/3">
                 <img
                     src={image}
-                    width={250}
-                    height={250}
+                    width={150}
+                    height={150}
                     alt="HackDearborn Logo"
                 />
             </div>
-            <div className="w-full md:w-1/2 lg:w-2/3">
+            <div className="w-full md:w-1/2 lg:w-2/3 mt-2">
                 <p className="text-2xl text-left mb-2 font-bold">
                     {title}
                 </p>
