@@ -1,3 +1,4 @@
+import { m } from "framer-motion";
 import { useState } from "react";
 
 type Sponsor = {
@@ -9,58 +10,65 @@ type Sponsor = {
 };
 
 const sponsors: Sponsor[] = [
+	// {
+	// 	name: "Ford",
+	// 	logo: "/static/images/sponsors/Ford.svg",
+	// 	url: "https://www.ford.com/",
+	// 	tier: "Platinum",
+	// },
 	{
-		name: "Ford",
-		logo: "/static/images/sponsors/Ford.svg",
-		url: "https://www.ford.com/",
-		tier: "Platinum",
-	},
-	{
-		name: "Amazon",
-		logo: "/static/images/sponsors/Amazon.svg",
-		hoverLogo: "/static/images/sponsors/Amazon - Dark.svg",
-		url: "https://www.aboutamazon.com/",
-		tier: "Platinum",
-	},
-	{
-		name: "Bosch",
-		logo: "/static/images/sponsors/Bosch.svg",
-		hoverLogo: "/static/images/sponsors/Bosch - Dark.svg",
-		url: "https://www.bosch.us/",
-		tier: "Platinum",
-	},
-	{
-		name: "Forvia",
-		logo: "/static/images/sponsors/Forvia.svg",
-		url: "https://www.forvia.com/",
+		name: "Carhartt",
+		logo: "/static/images/sponsors/carhartt-light.svg",
+		hoverLogo: "/static/images/sponsors/carhartt-dark.svg",
+		url: "https://www.carhartt.com/",
 		tier: "Gold",
 	},
-	{
-		name: "Little Caesars",
-		logo: "/static/images/sponsors/Little Caesar's.svg",
-		url: "https://littlecaesars.com/en-us/",
-		tier: "Gold",
-	},
-	{
-		name: "eTAS",
-		logo: "/static/images/sponsors/eTAS.svg",
-		url: "https://www.etas.com/en/",
-		tier: "Gold",
-	},
-	{
-		name: "Stand Out Stickers",
-		logo: "/static/images/sponsors/StandOut Stickers.svg",
-		hoverLogo: "/static/images/sponsors/StandOut Stickers - Dark.svg",
-		url: "https://www.standoutstickers.com/",
-		tier: "Silver",
-	},
-	{
-		name: "GitHub",
-		logo: "/static/images/sponsors/GitHub.svg",
-		hoverLogo: "/static/images/sponsors/GitHub - Dark.svg",
-		url: "http://github.com/",
-		tier: "Silver",
-	},
+	// {
+	// 	name: "Amazon",
+	// 	logo: "/static/images/sponsors/Amazon.svg",
+	// 	hoverLogo: "/static/images/sponsors/Amazon - Dark.svg",
+	// 	url: "https://www.aboutamazon.com/",
+	// 	tier: "Gold",
+	// },
+	// {
+	// 	name: "Bosch",
+	// 	logo: "/static/images/sponsors/Bosch.svg",
+	// 	hoverLogo: "/static/images/sponsors/Bosch - Dark.svg",
+	// 	url: "https://www.bosch.us/",
+	// 	tier: "Gold",
+	// },
+	// {
+	// 	name: "Forvia",
+	// 	logo: "/static/images/sponsors/Forvia.svg",
+	// 	url: "https://www.forvia.com/",
+	// 	tier: "Gold",
+	// },
+	// {
+	// 	name: "Little Caesars",
+	// 	logo: "/static/images/sponsors/Little Caesar's.svg",
+	// 	url: "https://littlecaesars.com/en-us/",
+	// 	tier: "Gold",
+	// },
+	// {
+	// 	name: "ETAS",
+	// 	logo: "/static/images/sponsors/eTAS.svg",
+	// 	url: "https://www.etas.com/en/",
+	// 	tier: "Gold",
+	// },
+	// {
+	// 	name: "Stand Out Stickers",
+	// 	logo: "/static/images/sponsors/StandOut Stickers.svg",
+	// 	hoverLogo: "/static/images/sponsors/StandOut Stickers - Dark.svg",
+	// 	url: "https://www.standoutstickers.com/",
+	// 	tier: "Silver",
+	// },
+	// {
+	// 	name: "GitHub",
+	// 	logo: "/static/images/sponsors/GitHub.svg",
+	// 	hoverLogo: "/static/images/sponsors/GitHub - Dark.svg",
+	// 	url: "http://github.com/",
+	// 	tier: "Silver",
+	// },
 	{
 		name: "University of Michigan Dearborn | College of Engineering and Computer Science",
 		logo: "/static/images/sponsors/UMD - CECS.png",
@@ -69,26 +77,38 @@ const sponsors: Sponsor[] = [
 		tier: "Silver",
 	},
 	{
-		name: "AI Futures",
-		logo: "/static/images/sponsors/AI Futures.svg",
-		hoverLogo: "/static/images/sponsors/AI Futures - Dark.svg",
-		url: "https://aifutures.us/",
+		name: "Epitec",
+		logo: "/static/images/sponsors/epitec.png",
+		url: "https://www.epitec.com/",
 		tier: "Bronze",
 	},
 	{
-		name: "echo3D",
-		logo: "/static/images/sponsors/echo3D.png",
-		hoverLogo: "/static/images/sponsors/echo3D - Dark.png",
-		url: "https://www.echo3d.com/",
+		name: "Rocket Central",
+		logo: "/static/images/sponsors/rocket2.png",
+		url: "https://rocketcentral.com/",
 		tier: "Bronze",
 	},
-	{
-		name: "Verbwire",
-		logo: "/static/images/sponsors/Verbwire.svg",
-		hoverLogo: "/static/images/sponsors/Verbwire - Dark.svg",
-		url: "https://www.verbwire.com/",
-		tier: "Bronze",
-	},
+	// {
+	// 	name: "AI Futures",
+	// 	logo: "/static/images/sponsors/AI Futures.svg",
+	// 	hoverLogo: "/static/images/sponsors/AI Futures - Dark.svg",
+	// 	url: "https://aifutures.us/",
+	// 	tier: "Bronze",
+	// },
+	// {
+	// 	name: "echo3D",
+	// 	logo: "/static/images/sponsors/echo3D.png",
+	// 	hoverLogo: "/static/images/sponsors/echo3D - Dark.png",
+	// 	url: "https://www.echo3d.com/",
+	// 	tier: "Bronze",
+	// },
+	// {
+	// 	name: "Verbwire",
+	// 	logo: "/static/images/sponsors/Verbwire.svg",
+	// 	hoverLogo: "/static/images/sponsors/Verbwire - Dark.svg",
+	// 	url: "https://www.verbwire.com/",
+	// 	tier: "Bronze",
+	// },
 ];
 
 const SponsorContent = ({ sponsor }: { sponsor: Sponsor }) => {
