@@ -70,8 +70,8 @@ const Faq = () => {
                 <div>
                     <div className="collapse collapse-arrow bg-black/70 my-2 py-3 backdrop-blur-sm">
                         <input type="radio" name="my-accordion-2" />
-                        <div className="collapse-title text-xl font-medium">
-                            What is a hackathon?
+                        <div className="collapse-title text-md md:text-xl font-medium">
+                            What's a hackathon?
                         </div>
                         <div className="collapse-content ">
                             <p>A hackathon is a 24+ hour event where " hackers" will collaborate on creating a functioning software and/or hardware project for fame and fortune. Okay, maybe not fame or fortune, but definitely cool prizes and bragging rights.</p>
@@ -79,7 +79,7 @@ const Faq = () => {
                     </div>
                     <div className="collapse collapse-arrow bg-black/70 my-2 py-3 backdrop-blur-sm">
                         <input type="radio" name="my-accordion-2" />
-                        <div className="collapse-title text-xl font-medium">
+                        <div className="collapse-title text-md md:text-xl font-medium">
                             Who can attend?
                         </div>
                         <div className="collapse-content">
@@ -88,8 +88,8 @@ const Faq = () => {
                     </div>
                     <div className="collapse collapse-arrow bg-black/70 my-2 py-3 backdrop-blur-sm">
                         <input type="radio" name="my-accordion-2" />
-                        <div className="collapse-title text-xl font-medium">
-                            I am a first time hacker, what should I do?
+                        <div className="collapse-title text-md md:text-xl font-medium">
+                            I am a first time hacker.
                         </div>
                         <div className="collapse-content">
                             <p>We love to welcome first time hackers starting their hacking journey. We'll have tons of mentors and workshops to help you get started. We'll also have a beginner track for you to compete in!</p>
@@ -97,7 +97,7 @@ const Faq = () => {
                     </div>
                     <div className="collapse collapse-arrow bg-black/70 my-2 py-3 backdrop-blur-sm">
                         <input type="radio" name="my-accordion-2" />
-                        <div className="collapse-title text-xl font-medium">
+                        <div className="collapse-title text-md md:text-xl font-medium">
                             How do teams work?
                         </div>
                         <div className="collapse-content">
@@ -108,7 +108,7 @@ const Faq = () => {
                 <div>
                     <div className="collapse collapse-arrow bg-black/70 my-2 py-3 backdrop-blur-sm">
                         <input type="radio" name="my-accordion-2" />
-                        <div className="collapse-title text-xl font-medium">
+                        <div className="collapse-title text-md md:text-xl font-medium">
                             Can I participate virtually?
                         </div>
                         <div className="collapse-content ">
@@ -117,7 +117,7 @@ const Faq = () => {
                     </div>
                     <div className="collapse collapse-arrow bg-black/70 my-2 py-3 backdrop-blur-sm">
                         <input type="radio" name="my-accordion-2" />
-                        <div className="collapse-title text-xl font-medium">
+                        <div className="collapse-title text-md md:text-xl font-medium">
                             How to register for the hackathon?
                         </div>
                         <div className="collapse-content">
@@ -126,20 +126,11 @@ const Faq = () => {
                     </div>
                     <div className="collapse collapse-arrow bg-black/70 my-2 py-3 backdrop-blur-sm">
                         <input type="radio" name="my-accordion-2" />
-                        <div className="collapse-title text-xl font-medium">
+                        <div className="collapse-title text-md md:text-xl font-medium">
                             Will there be swag?
                         </div>
                         <div className="collapse-content">
                             <p>Yes! All participants will receive some swag. Those who end up demoing their project will receive even more swag!</p>
-                        </div>
-                    </div>
-                    <div className="collapse collapse-arrow bg-black/70 my-2 py-3 backdrop-blur-sm">
-                        <input type="radio" name="my-accordion-2" />
-                        <div className="collapse-title text-xl font-medium">
-                            I have more questions.
-                        </div>
-                        <div className="collapse-content">
-                            <p>Reach us directly at info@hackdearborn.org, we would happy to help you.</p>
                         </div>
                     </div>
                 </div>
