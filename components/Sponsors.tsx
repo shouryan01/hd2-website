@@ -10,12 +10,12 @@ type Sponsor = {
 };
 
 const sponsors: Sponsor[] = [
-	{
-		name: "Ford",
-		logo: "/static/images/sponsors/Ford.svg",
-		url: "https://www.ford.com/",
-		tier: "Platinum",
-	},
+	// {
+	// 	name: "Ford",
+	// 	logo: "/static/images/sponsors/Ford.svg",
+	// 	url: "https://www.ford.com/",
+	// 	tier: "Platinum",
+	// },
 	{
 		name: "Carhartt",
 		logo: "/static/images/sponsors/carhartt-light.svg",
@@ -23,45 +23,38 @@ const sponsors: Sponsor[] = [
 		url: "https://www.carhartt.com/",
 		tier: "Gold",
 	},
-	{
-		name: "Amazon",
-		logo: "/static/images/sponsors/Amazon.svg",
-		hoverLogo: "/static/images/sponsors/Amazon - Dark.svg",
-		url: "https://www.aboutamazon.com/",
-		tier: "Gold",
-	},
-	{
-		name: "Bosch",
-		logo: "/static/images/sponsors/Bosch.svg",
-		hoverLogo: "/static/images/sponsors/Bosch - Dark.svg",
-		url: "https://www.bosch.us/",
-		tier: "Gold",
-	},
-	{
-		name: "Forvia",
-		logo: "/static/images/sponsors/Forvia.svg",
-		url: "https://www.forvia.com/",
-		tier: "Gold",
-	},
+	// {
+	// 	name: "Amazon",
+	// 	logo: "/static/images/sponsors/Amazon.svg",
+	// 	hoverLogo: "/static/images/sponsors/Amazon - Dark.svg",
+	// 	url: "https://www.aboutamazon.com/",
+	// 	tier: "Gold",
+	// },
+	// {
+	// 	name: "Bosch",
+	// 	logo: "/static/images/sponsors/Bosch.svg",
+	// 	hoverLogo: "/static/images/sponsors/Bosch - Dark.svg",
+	// 	url: "https://www.bosch.us/",
+	// 	tier: "Gold",
+	// },
+	// {
+	// 	name: "Forvia",
+	// 	logo: "/static/images/sponsors/Forvia.svg",
+	// 	url: "https://www.forvia.com/",
+	// 	tier: "Gold",
+	// },
 	{
 		name: "Little Caesars",
 		logo: "/static/images/sponsors/Little Caesar's.svg",
 		url: "https://littlecaesars.com/en-us/",
 		tier: "Gold",
 	},
-	{
-		name: "ETAS",
-		logo: "/static/images/sponsors/eTAS.svg",
-		url: "https://www.etas.com/en/",
-		tier: "Gold",
-	},
-	{
-		name: "Stand Out Stickers",
-		logo: "/static/images/sponsors/StandOut Stickers.svg",
-		hoverLogo: "/static/images/sponsors/StandOut Stickers - Dark.svg",
-		url: "http://hackp.ac/mlh-StandOutStickers-hackathons",
-		tier: "Silver",
-	},
+	// {
+	// 	name: "ETAS",
+	// 	logo: "/static/images/sponsors/eTAS.svg",
+	// 	url: "https://www.etas.com/en/",
+	// 	tier: "Gold",
+	// },
 	// {
 	// 	name: "GitHub",
 	// 	logo: "/static/images/sponsors/GitHub.svg",
@@ -69,13 +62,6 @@ const sponsors: Sponsor[] = [
 	// 	url: "http://github.com/",
 	// 	tier: "Silver",
 	// },
-	{
-		name: "University of Michigan Dearborn | College of Engineering and Computer Science",
-		logo: "/static/images/sponsors/UMD - CECS.png",
-		hoverLogo: "/static/images/sponsors/UMD - CECS - Dark.png",
-		url: "https://umdearborn.edu/cecs",
-		tier: "Silver",
-	},
 	{
 		name: "Epitec",
 		logo: "/static/images/sponsors/epitec.png",
@@ -93,6 +79,25 @@ const sponsors: Sponsor[] = [
 		logo: "/static/images/sponsors/AI Futures.svg",
 		hoverLogo: "/static/images/sponsors/AI Futures - Dark.svg",
 		url: "https://aifutures.us/",
+		tier: "Silver",
+	},
+	{
+		name: "University of Michigan Dearborn | College of Engineering and Computer Science",
+		logo: "/static/images/sponsors/UMD - CECS.png",
+		hoverLogo: "/static/images/sponsors/UMD - CECS - Dark.png",
+		url: "https://umdearborn.edu/cecs",
+		tier: "Silver",
+	},
+	{
+		name: "Vision Jiu-Jitsu",
+		logo: "/static/images/sponsors/jiu.png",
+		tier: "Bronze",
+	},
+	{
+		name: "Stand Out Stickers",
+		logo: "/static/images/sponsors/StandOut Stickers.svg",
+		hoverLogo: "/static/images/sponsors/StandOut Stickers - Dark.svg",
+		url: "http://hackp.ac/mlh-StandOutStickers-hackathons",
 		tier: "Bronze",
 	},
 	// {
