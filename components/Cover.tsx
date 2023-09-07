@@ -95,12 +95,11 @@ export default function Cover() {
                     <ApplyGlitch>
                         Hack <br />Dearborn
                     </ApplyGlitch>
-
-                    <div className="mr-10">
-                        <Apply_Button glitch={false} />
-                    </div>
                 </h1>
-
+                <h3 className="d31">Oct 21-22</h3>
+                <div className="mr-10 flex justify-center">
+                    <Apply_Button glitch={false} />
+                </div>
                 <div className="arrow bounce mt-56"></div>
             </Plx>
         </div >

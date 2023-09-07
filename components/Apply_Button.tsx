@@ -11,7 +11,7 @@ function Apply_Button({ glitch }: Props) {
             <SliderButton
                 id={"oNcQNjvg"}
                 width={5000}
-                className="mb-20"
+                className="mb-10"
             >
                 <div className="cta text-3xl lg:text-5xl mt-20">
                     <span className="font-Copperplate">Apply</span>

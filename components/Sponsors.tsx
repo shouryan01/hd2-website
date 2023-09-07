@@ -49,19 +49,6 @@ const sponsors: Sponsor[] = [
 		url: "https://littlecaesars.com/en-us/",
 		tier: "Gold",
 	},
-	// {
-	// 	name: "ETAS",
-	// 	logo: "/static/images/sponsors/eTAS.svg",
-	// 	url: "https://www.etas.com/en/",
-	// 	tier: "Gold",
-	// },
-	// {
-	// 	name: "GitHub",
-	// 	logo: "/static/images/sponsors/GitHub.svg",
-	// 	hoverLogo: "/static/images/sponsors/GitHub - Dark.svg",
-	// 	url: "http://github.com/",
-	// 	tier: "Silver",
-	// },
 	{
 		name: "Epitec",
 		logo: "/static/images/sponsors/epitec.png",
@@ -75,11 +62,29 @@ const sponsors: Sponsor[] = [
 		tier: "Bronze",
 	},
 	{
+		name: "Denso",
+		logo: "/static/images/sponsors/denso.png",
+		url: "https://www.denso.com/us-ca/en/",
+		tier: "Bronze",
+	},
+	{
+		name: "Magna",
+		logo: "/static/images/sponsors/magna.png",
+		url: "https://www.magna.com/",
+		tier: "Bronze",
+	},
+	{
 		name: "AI Futures",
 		logo: "/static/images/sponsors/AI Futures.svg",
 		hoverLogo: "/static/images/sponsors/AI Futures - Dark.svg",
 		url: "https://aifutures.us/",
 		tier: "Silver",
+	},
+
+	{
+		name: "Vision Jiu-Jitsu",
+		logo: "/static/images/sponsors/jiu.png",
+		tier: "Bronze",
 	},
 	{
 		name: "University of Michigan Dearborn | College of Engineering and Computer Science",
@@ -89,31 +94,12 @@ const sponsors: Sponsor[] = [
 		tier: "Silver",
 	},
 	{
-		name: "Vision Jiu-Jitsu",
-		logo: "/static/images/sponsors/jiu.png",
-		tier: "Bronze",
-	},
-	{
 		name: "Stand Out Stickers",
 		logo: "/static/images/sponsors/StandOut Stickers.svg",
 		hoverLogo: "/static/images/sponsors/StandOut Stickers - Dark.svg",
 		url: "http://hackp.ac/mlh-StandOutStickers-hackathons",
 		tier: "Bronze",
 	},
-	// {
-	// 	name: "echo3D",
-	// 	logo: "/static/images/sponsors/echo3D.png",
-	// 	hoverLogo: "/static/images/sponsors/echo3D - Dark.png",
-	// 	url: "https://www.echo3d.com/",
-	// 	tier: "Bronze",
-	// },
-	// {
-	// 	name: "Verbwire",
-	// 	logo: "/static/images/sponsors/Verbwire.svg",
-	// 	hoverLogo: "/static/images/sponsors/Verbwire - Dark.svg",
-	// 	url: "https://www.verbwire.com/",
-	// 	tier: "Bronze",
-	// },
 ];
 
 const SponsorContent = ({ sponsor }: { sponsor: Sponsor }) => {
@@ -162,9 +148,9 @@ const SponsorsContainer = ({
 	const tierMaps: { [key: string]: any } = {
 		grid: {
 			Platinum: 1,
-			Gold: 2,
-			Silver: 3,
-			Bronze: 4,
+			Gold: 1,
+			Silver: 2,
+			Bronze: 3,
 		},
 		flex: {
 			Platinum: "lg:w-12/12",

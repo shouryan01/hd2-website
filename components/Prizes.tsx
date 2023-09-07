@@ -7,40 +7,36 @@ type Prize = {
 
 const prizes: Prize[] = [
 	{
-		title: "3D Printer",
-		image: "/static/images/prizes/3D Printer.png",
+		title: "Coffee Maker\n(Education)",
+		image: "/static/images/prizes/coffee maker (education).svg",
 	},
 	{
-		title: "Arduino Starter Kit",
-		image: "/static/images/prizes/Arduino Starter Kit.png",
+		title: "Hoverboard\n(Automotive)",
+		image: "/static/images/prizes/hoverboard (automotive).svg",
 	},
 	{
-		title: "Drone",
-		image: "/static/images/prizes/Drone.png",
+		title: "Smartwatch\n(Health)",
+		image: "/static/images/prizes/smartwatch (health).svg",
 	},
 	{
-		title: "Google Swags",
-		image: "/static/images/prizes/Google Swags.png",
+		title: "Switch\n(3rd Place)",
+		image: "/static/images/prizes/switch (third prize).svg",
 	},
 	{
-		title: "Instant Camera Kit",
-		image: "/static/images/prizes/Instant Camera Kit.png",
+		title: "iPad\n(1st Prize)",
+		image: "/static/images/prizes/ipad (first prize).svg",
 	},
 	{
-		title: "iPad",
-		image: "/static/images/prizes/iPad.png",
+		title: "Bose Headphones\n(2nd Place)",
+		image: "/static/images/prizes/bose (second prize).svg",
 	},
 	{
-		title: "Noise-Cancelling Headphones",
-		image: "/static/images/prizes/Noise-Cancelling Headphones.png",
+		title: "Mechanical Keyboard\n(Beginner)",
+		image: "/static/images/prizes/keyboard (beginner).svg",
 	},
 	{
-		title: "Smart Garden",
-		image: "/static/images/prizes/Smart Garden.png",
-	},
-	{
-		title: "VR Headset",
-		image: "/static/images/prizes/VR Headset.png",
+		title: "Yeti Mic\n(Finance)",
+		image: "/static/images/prizes/mic (finance).svg",
 	},
 ];
 

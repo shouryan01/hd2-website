@@ -94,8 +94,12 @@ export default function Mobile_Cover() {
                     <ApplyGlitch>
                         Hack <br />Dearborn
                     </ApplyGlitch>
-                    <Apply_Button glitch={false} />
                 </h1>
+                <h3 className="d33">Oct 21-22</h3>
+                <div className="mr-10 flex justify-center">
+                    <Apply_Button glitch={false} />
+                </div>
+
                 <div className="arrow bounce mt-56"></div>
             </Plx>
             <div className="text-center">

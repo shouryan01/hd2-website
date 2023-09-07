@@ -75,7 +75,17 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.2em;
   text-shadow: -0.09em 0 0 #ff66c4, 0.09em 0 0 #007aff;
-  margin-top: calc(10rem + 5vw);
+  margin-top: calc(5rem + 5vw);
+  z-index: 30;
+}
+.d31 {
+  font-family: "abang", sans-serif;
+  font-size: calc(0.5rem + 2.5vw);
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-shadow: -0.09em 0 0 #ff66c4, 0.09em 0 0 #007aff;
   z-index: 30;
 }
 .d32 {
@@ -87,6 +97,16 @@ body {
   letter-spacing: 0.2em;
   text-shadow: -0.09em 0 0 #ff66c4, 0.09em 0 0 #007aff;
   margin-top: calc(10rem + 5vw);
+  z-index: 50;
+}
+.d33 {
+  font-family: "abang", sans-serif;
+  font-size: calc(6vw);
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-shadow: -0.09em 0 0 #ff66c4, 0.09em 0 0 #007aff;
   z-index: 50;
 }
 .d4 {
@@ -271,7 +291,7 @@ body {
 }
 
 .cta:focus {
- outline: none; 
+ outline: none;
 }
 
 .cta:hover {
@@ -290,7 +310,7 @@ body {
 }
 
 span {
-  transform: skewX(15deg) 
+  transform: skewX(15deg)
 }
 
 span:nth-child(2) {
