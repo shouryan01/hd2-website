@@ -10,12 +10,6 @@ type Sponsor = {
 };
 
 const sponsors: Sponsor[] = [
-	// {
-	// 	name: "Ford",
-	// 	logo: "/static/images/sponsors/Ford.svg",
-	// 	url: "https://www.ford.com/",
-	// 	tier: "Platinum",
-	// },
 	{
 		name: "Carhartt",
 		logo: "/static/images/sponsors/carhartt-light.svg",
@@ -28,13 +22,6 @@ const sponsors: Sponsor[] = [
 	// 	logo: "/static/images/sponsors/Amazon.svg",
 	// 	hoverLogo: "/static/images/sponsors/Amazon - Dark.svg",
 	// 	url: "https://www.aboutamazon.com/",
-	// 	tier: "Gold",
-	// },
-	// {
-	// 	name: "Bosch",
-	// 	logo: "/static/images/sponsors/Bosch.svg",
-	// 	hoverLogo: "/static/images/sponsors/Bosch - Dark.svg",
-	// 	url: "https://www.bosch.us/",
 	// 	tier: "Gold",
 	// },
 	// {
@@ -74,13 +61,37 @@ const sponsors: Sponsor[] = [
 		tier: "Bronze",
 	},
 	{
+		name: "Grand Circus",
+		logo: "/static/images/sponsors/grand.png",
+		url: "https://www.grandcircus.co/",
+		tier: "Bronze",
+	},
+	{
+		name: "ZF",
+		logo: "/static/images/sponsors/zf1.png",
+		url: "https://www.zf.com/mobile/en/homepage/homepage.html",
+		tier: "Gold",
+	},
+	{
 		name: "AI Futures",
 		logo: "/static/images/sponsors/AI Futures.svg",
 		hoverLogo: "/static/images/sponsors/AI Futures - Dark.svg",
 		url: "https://aifutures.us/",
 		tier: "Silver",
 	},
-
+	{
+		name: "Ford",
+		logo: "/static/images/sponsors/Ford.svg",
+		url: "https://www.ford.com/",
+		tier: "Silver",
+	},
+	{
+		name: "Bosch",
+		logo: "/static/images/sponsors/Bosch.svg",
+		hoverLogo: "/static/images/sponsors/Bosch - Dark.svg",
+		url: "https://www.bosch.us/",
+		tier: "Silver",
+	},
 	{
 		name: "Vision Jiu-Jitsu",
 		logo: "/static/images/sponsors/jiu.png",
