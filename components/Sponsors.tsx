@@ -48,12 +48,12 @@ const sponsors: Sponsor[] = [
 		url: "https://rocketcentral.com/",
 		tier: "Bronze",
 	},
-	{
-		name: "Denso",
-		logo: "/static/images/sponsors/denso.png",
-		url: "https://www.denso.com/us-ca/en/",
-		tier: "Bronze",
-	},
+	// {
+	// 	name: "Denso",
+	// 	logo: "/static/images/sponsors/denso.png",
+	// 	url: "https://www.denso.com/us-ca/en/",
+	// 	tier: "Bronze",
+	// },
 	{
 		name: "Magna",
 		logo: "/static/images/sponsors/magna.png",
@@ -90,12 +90,18 @@ const sponsors: Sponsor[] = [
 		logo: "/static/images/sponsors/Bosch.svg",
 		hoverLogo: "/static/images/sponsors/Bosch - Dark.svg",
 		url: "https://www.bosch.us/",
-		tier: "Silver",
+		tier: "Gold",
 	},
 	{
 		name: "Vision Jiu-Jitsu",
 		logo: "/static/images/sponsors/jiu.png",
 		tier: "Bronze",
+	},
+	{
+		name: "Kyndryl",
+		logo: "/static/images/sponsors/kyndryl.png",
+		url: "https://umdearborn.edu/cecs",
+		tier: "Silver",
 	},
 	{
 		name: "University of Michigan Dearborn | College of Engineering and Computer Science",
