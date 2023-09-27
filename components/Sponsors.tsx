@@ -92,11 +92,11 @@ const sponsors: Sponsor[] = [
 		url: "https://www.bosch.us/",
 		tier: "Gold",
 	},
-	{
-		name: "Vision Jiu-Jitsu",
-		logo: "/static/images/sponsors/jiu.png",
-		tier: "Bronze",
-	},
+	// {
+	// 	name: "Vision Jiu-Jitsu",
+	// 	logo: "/static/images/sponsors/jiu.png",
+	// 	tier: "Bronze",
+	// },
 	{
 		name: "Kyndryl",
 		logo: "/static/images/sponsors/kyndryl.png",
