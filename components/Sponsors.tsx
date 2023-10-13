@@ -94,7 +94,7 @@ const sponsors: Sponsor[] = [
 	},
 	{
 		name: "Vision Jiu-Jitsu",
-		logo: "/static/images/sponsors/jiu.png",
+		logo: "/static/images/sponsors/jiu2.jpeg",
 		tier: "Bronze",
 	},
 	{
